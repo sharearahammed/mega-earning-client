@@ -95,7 +95,7 @@ const Login = () => {
                 </label>
               </div>
               <input
-                type='password'
+                type='password' 
                 name='password'
                 autoComplete='current-password'
                 id='password'
