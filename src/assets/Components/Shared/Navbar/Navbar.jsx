@@ -22,7 +22,7 @@ const Navbar = () => {
             </NavLink>
           </li>
           {
-            user ? 
+            user && 
             <>
             <li className="text-gray-400 font-bold">
             <NavLink
@@ -67,21 +67,6 @@ const Navbar = () => {
             </NavLink>
           </li>
             </>
-            :
-            <li className="text-gray-400 font-bold">
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isActive
-                  ? "text-[#FF5851] font-bold  rounded-lg"
-                  : isPending
-                  ? "pending"
-                  : ""
-              }
-              to={"/rooms"}
-            >
-              WatchDemo
-            </NavLink> 
-          </li>
           }
         </>
       );
@@ -159,6 +144,7 @@ const Navbar = () => {
             <Link to={'/signUp'}>
             <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">Register</button>
             </Link>
+            <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl"><a href="https://www.youtube.com/watch?v=aF5wEhVh2ZY">WatchDemo</a></button>
           </div>}
           </div>
         </div>

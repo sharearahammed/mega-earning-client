@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
   const signInWithGoogle = () => {
     setLoading(true)
     return signInWithPopup(auth, googleProvider)
-  } 
+  }
 
   const resetPassword = email => {
     setLoading(true)
@@ -64,7 +64,7 @@ const AuthProvider = ({ children }) => {
       name:user?.displayName,
       image:user?.photoURL,
     }
-    const { data } = await axios.put(
+    const { data } = await axios.post(
       `${import.meta.env.VITE_API_URL}/users`,
       currentUser
     )
@@ -85,7 +85,10 @@ const AuthProvider = ({ children }) => {
                      setLoading(false)
                  }
              })
-             saveUser(currentUser)
+             if(signInWithGoogle){
+              saveUser(currentUser)
+             }
+             
          }
          else{
              localStorage.removeItem('access-token')   

@@ -28,13 +28,13 @@ const SignUp = () => {
     const password = form.password.value;
     const role = form.role.value;
     const image = form.image.files[0];
-    const CreateUser = {
+    const userInfo = {
       name,
       email,
       role,
       image,
     };
-    console.log(CreateUser);
+    console.log(userInfo);
     setError("");
     // validation
     if (password.length < 6) {
@@ -51,33 +51,34 @@ const SignUp = () => {
       );
       return;
     }
-    const emailpattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const emailpattern = /^[a-z][^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailpattern.test(email)) {
       setError("Invalid email format.");
       toast.error("Invalid email format.");
       return;
     }
 
+
     try {
-      setLoading(true);
+      setLoading(true)
       // 1. Upload image and get image url
       const image_url = await imageUpload(image);
       console.log(image_url);
-      //2. User Registration
-      const result = await createUser(email, password);
-      console.log(result);
-
       //   save user in db
-      axiosPublic
-        .put("/users", { ...CreateUser, image: image_url })
+      await axiosPublic
+        .post("/users", { ...userInfo, image: image_url })
         .then((res) => {
-          if (res.data.insertedId) {
-            console.log(res.data);
+          console.log(res.data)
+          if (res.data.upsertedId) {
+            console.log('-----------------------',res);
+            toast.success("User Create Successfully!");
           }
-          toast.success("User Create Successfully!");
           navigate("/login");
           logOut();
         });
+      //2. User Registration
+      const result = await createUser(email, password);
+      console.log(result);
       // 3. Save username and photo in firebase
       await updateUserProfile(name, image_url);
     } catch (err) {
@@ -85,6 +86,7 @@ const SignUp = () => {
       console.log(err);
       toast.error(err.message);
     }
+    setLoading(false)
   };
 
   // handle google signin
