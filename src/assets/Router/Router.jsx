@@ -4,6 +4,8 @@ import Home from "../Components/Home/Home";
 import Login from "../Components/Login/Login";
 import SignUp from "../Components/Signup/Signup";
 import Dashboard from "../Components/Dashboard/Dashboard";
+import AddTask from "../Components/Dashboard/TaskCreator/AddTask";
+import MyListings from "../Components/Dashboard/MyListings/MyListings";
 
 const router = createBrowserRouter([
     {
@@ -25,8 +27,18 @@ const router = createBrowserRouter([
       ]
     },
     {
-      path:'dashboard',
-      element:<Dashboard />
+      path:'/dashboard',
+      element:<Dashboard />,
+      children:[
+        {
+          path:'addNewTask',
+          element: <AddTask />
+        },
+        {
+          path:'my-listings',
+          element: <MyListings />
+        }
+      ]
     }
   ]);
 

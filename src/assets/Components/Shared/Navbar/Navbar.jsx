@@ -3,28 +3,27 @@ import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    const { user, logOut } = useAuth()
-    const links = (
+  const [isOpen, setIsOpen] = useState(false);
+  const { user, logOut } = useAuth();
+  const links = (
+    <>
+      <li className="text-gray-400 font-bold">
+        <NavLink
+          className={({ isActive, isPending }) =>
+            isActive
+              ? "text-[#FF5851] font-bold rounded-lg"
+              : isPending
+              ? "pending"
+              : ""
+          }
+          to={"/"}
+        >
+          Home
+        </NavLink>
+      </li>
+      {user && (
         <>
           <li className="text-gray-400 font-bold">
-            <NavLink
-              className={({ isActive, isPending }) =>
-                isActive
-                  ? "text-[#FF5851] font-bold rounded-lg"
-                  : isPending
-                  ? "pending"
-                  : ""
-              }
-              to={"/"}
-            >
-              Home
-            </NavLink>
-          </li>
-          {
-            user && 
-            <>
-            <li className="text-gray-400 font-bold">
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
@@ -33,7 +32,7 @@ const Navbar = () => {
                   ? "pending"
                   : ""
               }
-              to={"/about"}
+              to={"/dashboard"}
             >
               Dashboard
             </NavLink>
@@ -62,21 +61,21 @@ const Navbar = () => {
                   : ""
               }
               to={"/contact"}
-            > 
+            >
               User Profile
             </NavLink>
           </li>
-            </>
-          }
         </>
-      );
-    return (
-        <nav className="relative bg-white shadow ">
+      )}
+    </>
+  );
+  return (
+    <nav className="relative bg-white shadow ">
       <div className="container px-6 py-4 mx-auto">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <div className="lg:text-2xl font-extrabold bg-gradient-to-r from-[#E63946] to-[#FB8B24]  bg-clip-text text-transparent">
-            <Link to={'/'}>MEGAEARNING</Link>
+              <Link to={"/"}>MEGAEARNING</Link>
             </div>
 
             {/* Mobile menu button */}
@@ -134,23 +133,39 @@ const Navbar = () => {
               <ul className="menu lg:menu-horizontal px-1">{links}</ul>
             </div>
 
-            {user ? <div >
-              <button onClick={()=>logOut()} className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">Logout</button>
-            </div> :
-            <div className="flex gap-2 items-center mt-4 lg:mt-0">
-            <Link to={'/login'}>
-            <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">Login</button>
-            </Link>
-            <Link to={'/signUp'}>
-            <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">Register</button>
-            </Link>
-            <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl"><a href="https://www.youtube.com/watch?v=aF5wEhVh2ZY">WatchDemo</a></button>
-          </div>}
+            {user ? (
+              <div>
+                <button
+                  onClick={() => logOut()}
+                  className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <div className="flex gap-2 items-center mt-4 lg:mt-0">
+                <Link to={"/login"}>
+                  <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                    Login
+                  </button>
+                </Link>
+                <Link to={"/signUp"}>
+                  <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                    Register
+                  </button>
+                </Link>
+                <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                  <a href="https://www.youtube.com/watch?v=aF5wEhVh2ZY">
+                    WatchDemo
+                  </a>
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>
     </nav>
-    );
+  );
 };
 
 export default Navbar;
