@@ -141,7 +141,7 @@ const SignUp = () => {
               </label>
               <input
                 required
-                type="file" 
+                type="file"
                 id="image"
                 name="image"
                 accept="image/*"
