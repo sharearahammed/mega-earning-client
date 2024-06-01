@@ -111,7 +111,7 @@ const UpdateRoomModal = ({ setIsEditModalOpen, isOpen, room, refetch }) => {
                 </DialogTitle>
                 <div className='mt-2 w-full'>
                   {/* Update room form */}
-                  <UpdateTaskForm
+                  <UpdateTaskForm 
                     handleSubmit={handleSubmit}
                     dates={dates}
                     handleDates={handleDates}
