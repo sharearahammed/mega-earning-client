@@ -62,7 +62,7 @@ const Navbar = () => {
                   : ""
               }
               to={"/contact"}
-            >
+            > 
               User Profile
             </NavLink>
           </li>
