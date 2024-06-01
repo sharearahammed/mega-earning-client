@@ -23,7 +23,7 @@ const Login = () => {
       setLoading(true)
       // 1. sign in user
       await signIn(email, password)
-      navigate(from)
+      navigate('/dashboard')
       toast.success('Signup Successful')
     } catch (err) {
       console.log(err)
@@ -50,7 +50,6 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-
       navigate(from)
       toast.success('Signin Successful')
     } catch (err) {

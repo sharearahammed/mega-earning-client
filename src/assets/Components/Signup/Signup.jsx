@@ -77,7 +77,7 @@ const SignUp = () => {
           logOut();
         });
       //2. User Registration
-      const result = await createUser(email, password);
+      const result = await createUser(email, password)
       console.log(result);
       // 3. Save username and photo in firebase
       await updateUserProfile(name, image_url);
