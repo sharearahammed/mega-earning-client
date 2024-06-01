@@ -31,7 +31,7 @@ const HowDoesItWork = () => {
                     <h3 className="mt-6 text-xl text-white font-semibold leading-tight md:mt-10">Complete Tasks</h3>
                     <p className="mt-4 text-base text-white md:text-lg">
                     Browse through available tasks tailored to your interests and skills. Choose tasks that appeal to you, complete them according to instructions, and submit your work.
-
+ 
 
                     </p>
                 </div>
