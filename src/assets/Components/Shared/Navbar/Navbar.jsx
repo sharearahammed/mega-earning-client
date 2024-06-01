@@ -80,7 +80,7 @@ const Navbar = () => {
               to={"/rooms"}
             >
               WatchDemo
-            </NavLink>
+            </NavLink> 
           </li>
           }
         </>
