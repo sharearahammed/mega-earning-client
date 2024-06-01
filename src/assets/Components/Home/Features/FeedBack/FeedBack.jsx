@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useAxiosCommon, { axiosCommon } from "../../../Hook/useAxiosCommon";
+import useAxiosCommon from "../../../Hook/useAxiosCommon";
 
 const FeedBack = () => {
     const axiosCommon = useAxiosCommon();

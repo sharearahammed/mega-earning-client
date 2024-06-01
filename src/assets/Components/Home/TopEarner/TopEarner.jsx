@@ -11,7 +11,7 @@ const TopEarner = () => {
                 <h3 className="text-xl font-semibold mb-2">John Doe</h3>
                 <p className="text-gray-700">Role: Software Engineer</p>
             </div>
-
+ 
             <div className="bg-white rounded-lg shadow-md p-6 my-6 text-center">
                 <img src="https://spacema-dev.com/elevate/assets/images/team/4.jpg" alt="Team Member 2" className="w-full rounded-full mb-4"/>
                 <h3 className="text-xl font-semibold mb-2">Jane Smith</h3>
