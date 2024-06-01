@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
   const signInWithGoogle = () => {
     setLoading(true)
     return signInWithPopup(auth, googleProvider)
-  }
+  } 
 
   const resetPassword = email => {
     setLoading(true)
