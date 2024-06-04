@@ -92,7 +92,7 @@ console.log('current user totalPayment:',totalpayment)
                         key={submission._id}
                         submission={submission}
                         refetch={refetch}
-                         />)
+                         />) 
                 }
               </tbody>
             </table>
