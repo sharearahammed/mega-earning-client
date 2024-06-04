@@ -10,7 +10,7 @@ const AdminWithdrawReqTable = ({ withdraw, refetch }) => {
     console.log(withdraw);
     try {
       Swal.fire({
-        title: "Are you sure?",
+        title: "Are you sure?", 
         text: "If you confirm then payment successfull",
         icon: "",
         showCancelButton: true,
