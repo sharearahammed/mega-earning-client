@@ -6,7 +6,6 @@ import useAuth from '../../Hook/useAuth';
 import { useEffect, useState } from 'react';
 import { ImSpinner9 } from 'react-icons/im';
 import toast from 'react-hot-toast';
-import axios from 'axios';
 const CheckoutForm = ({refetch,cart,closeModal}) => {
 
     const stripe = useStripe()
@@ -98,18 +97,13 @@ console.log(user.email)
       
       try {
         // 2. save payment info in booking collection (db)
-        axios.post("http://localhost:5000/paymentdata", paymentInfo).then((res) => {
+        axiosSecure.post("/paymentdata", paymentInfo).then((res) => {
           console.log(res);
-          if (res.data.result.insertedId) {
-            closeModal();
             toast.success("Coin added Successfully");
             refetch()
             // navigate("/dashboard/payment-history");
             console.log("post success");
-            closeModal()
-          } else {
-            toast.error("Failed");
-          }
+            closeModal();
         });
       } catch (err) {
         console.log(err)

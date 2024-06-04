@@ -1,15 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosCommon from "../../Hook/useAxiosCommon";
 import PurchaseCoinCard from "./PurchaseCoinCard";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const PurchaseCoin = () => {
-    const axiospublic = useAxiosCommon();
+    const axiosSecure = useAxiosSecure();
     const {
         data: cards = '',refetch
       } = useQuery({
         queryKey: ['room'],
         queryFn: async () => {
-          const res = await axiospublic.get(`/purchasecoin`)
+          const res = await axiosSecure.get(`/purchasecoin`)
           return res.data
         },
       })

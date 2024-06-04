@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 
 const ManageUsersTable = ({user,refetch}) => {
     const axiosSecure = useAxiosSecure();
-    const [selectedRole, setSelectedRole] = useState(user.role);
+    const [selectedRole, setSelectedRole] = useState(user?.role);
 
     
 
@@ -41,11 +41,11 @@ const ManageUsersTable = ({user,refetch}) => {
           if (res.data.modifiedCount > 0) {
             setSelectedRole(newRole);
             refetch();
-            toast.success(`${user.name} is now a ${newRole}!`)
+            toast.success(`${user?.name} is now a ${newRole}!`)
           }
         } catch (error) {
           console.error("Failed to update role", error);
-          toast.error( `Failed to update role for ${user.name}`)
+          toast.error( `Failed to update role for ${user?.name}`)
         }
       };
       
@@ -59,7 +59,7 @@ const ManageUsersTable = ({user,refetch}) => {
           <td>{user?.coins}</td>
           <td>
           <div>
-      <select value={selectedRole} onChange={handleRoleChange} className="dropdown bg-gray-100 p-2 text-center rounded-lg">
+      <select value={selectedRole} onChange={handleRoleChange} className="dropdown bg-gray-100 px-3 py-2  text-center rounded-lg">
         <option value="TaskCreator">Task Creator</option>
         <option value="Admin">Admin</option>
         <option value="Worker">Worker</option>
@@ -69,7 +69,7 @@ const ManageUsersTable = ({user,refetch}) => {
           <td>
             <button
             onClick={handleDeleteUser}
-              className="bg-red-300 flex justify-center items-center p-1 rounded-lg"
+              className="bg-red-300 flex justify-center items-center px-3 py-2 rounded-lg"
             >
               <p className="text-gray-700">Delete</p>
             </button>

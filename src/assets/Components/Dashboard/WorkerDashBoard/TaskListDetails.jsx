@@ -1,8 +1,11 @@
+/* eslint-disable react/no-deprecated */
 import { useNavigate, useParams } from "react-router-dom";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hook/useAuth";
 import toast from "react-hot-toast";
+import { format, parseISO } from "date-fns";
+import Countdown from "react-countdown";
 
 const TaskListDetails = () => {
   const { id } = useParams();
@@ -16,6 +19,28 @@ const TaskListDetails = () => {
       return res.data;
     },
   });
+  const date = taskdetails?.date ? parseISO(taskdetails?.date) : null;
+  const finishDate = taskdetails?.date;
+  const dates = new Date(finishDate);
+
+  // Renderer callback with condition
+  const renderer = ({ days, hours, minutes, seconds, completed }) => {
+    if (completed) {
+      // Render a redirect or navigate to another route
+      <p>Not Available</p>;
+      return null;
+    } else {
+      // Render a countdown
+      return (
+        <div>
+          <span>{days} days </span>
+          <span>{hours} hours </span>
+          <span>{minutes} minutes </span>
+          <span>{seconds} seconds</span>
+        </div>
+      );
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,34 +72,29 @@ const TaskListDetails = () => {
       creator_name,
       creator_email,
       current_date,
-      status
+      status,
     };
-    console.log(submissionInfo)
-    
-    axiosSecure.post('/submission',submissionInfo)
-    .then(res=>{
-        console.log(res.data)
-        if(res.data.insertedId){
-            toast.success("Submission Send Successfully!")
-            form.reset()
-            navigate('/dashboard/worker-submission')
-        }
-        else{
-            toast.error("Submission not send!")
-        }
-    })
+    console.log(submissionInfo);
 
-    
+    axiosSecure.post("/submission", submissionInfo).then((res) => {
+      console.log(res.data);
+      if (res.data.insertedId) {
+        toast.success("Submission Send Successfully!");
+        form.reset();
+        navigate("/dashboard/worker-submission");
+      } else {
+        toast.error("Submission not send!");
+      }
+    });
   };
 
   return (
     <div className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
-        <div className="py-8">
+        <div className="py-8 flex justify-between items-center">
           <h1 className="text-3xl font-bold mb-2">{taskdetails?.task_title}</h1>
-          <p className="text-gray-500 text-sm">
-            Published on <time>{taskdetails?.currentTime}</time>
-          </p>
+          <p className="text-2xl mt-10 flex flex-col justify-center items-start"><span className="font-bold">Submission Last Date:</span> <Countdown className="text-2xl" date={dates} renderer={renderer} /></p>
+          
         </div>
 
         <img
@@ -102,7 +122,7 @@ const TaskListDetails = () => {
               </p>
               <p className="mt-3">
                 <span className="font-bold">Submission Last Date:</span>{" "}
-                {taskdetails?.date}
+                {date ? format(date, "MMMM do, yyyy h:mm a") : "Invalid date"}
               </p>
               <p className="mt-3">
                 <span className="font-bold">Submission Info :</span>{" "}
@@ -118,10 +138,10 @@ const TaskListDetails = () => {
                 Enter The Required Proof Of Job Finished:
               </label>
               <textarea
+                required
                 rows="10"
                 name="textarea"
                 className="appearance-none block w-full text-gray-700 border border- rounded-lg py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-[#22ab59]"
-                required
               ></textarea>
             </div>
             <div className="flex justify-between w-full px-3">
@@ -141,5 +161,5 @@ const TaskListDetails = () => {
     </div>
   );
 };
-
+// document.getElementById('root')
 export default TaskListDetails;

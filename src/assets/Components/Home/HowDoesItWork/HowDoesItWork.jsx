@@ -6,7 +6,7 @@ const HowDoesItWork = () => {
         <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl text-white font-extrabold mx-auto md:text-6xl lg:text-5xl">How does it work?</h2>
             <p className="max-w-2xl mx-auto mt-4 text-base text-white leading-relaxed md:text-2xl">
-                Our AI solution will help you from start to finish
+                Our solution will help you from start to finish
             </p>
         </div>
         <div className="relative mt-12 lg:mt-20">

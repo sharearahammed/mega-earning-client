@@ -32,13 +32,18 @@ const AdminHome = () => {
       const totalPayment = payment?.length;
 
     return (
-        <div>
+        <div className='mt-20'>
+            <div className="">
             <AdminStates
             user={totalUser}
             totalCoin={totalCoin}
             payment={totalPayment}
               />
+            <div className='mt-10'>
             <AdminWithdrawReq />
+            </div>
+            </div>
+            
         </div>
     );
 };

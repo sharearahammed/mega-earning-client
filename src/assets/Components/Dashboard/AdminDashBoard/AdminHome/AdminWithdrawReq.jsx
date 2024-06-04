@@ -19,7 +19,9 @@ const AdminWithdrawReq = () => {
       console.log('withdraws',withdraws)
 
     return (
-        <div>
+        <div className="">
+            <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Withdraw request</h1>
+            <div className="overflow-x-auto">
             <table className="table">
               {/* head */}
               <thead>
@@ -44,6 +46,7 @@ const AdminWithdrawReq = () => {
                 }
               </tbody>
             </table>
+            </div>
         </div>
     );
 };

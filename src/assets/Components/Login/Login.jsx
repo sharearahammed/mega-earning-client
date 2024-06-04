@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FcGoogle } from 'react-icons/fc'
 import toast from 'react-hot-toast'
 import { useState } from 'react'
@@ -7,8 +7,6 @@ import { ImSpinner9 } from 'react-icons/im'
 
 const Login = () => {
   const navigate = useNavigate()
-  const location = useLocation()
-  const from = location?.state || '/'
   const { signInWithGoogle, signIn, loading, setLoading, resetPassword } =
     useAuth()
   const [email, setEmail] = useState('')
@@ -50,7 +48,7 @@ const Login = () => {
   const handleGoogleSignIn = async () => {
     try {
       await signInWithGoogle()
-      navigate(from)
+      navigate('/dashboard')
       toast.success('Signin Successful')
     } catch (err) {
       console.log(err)

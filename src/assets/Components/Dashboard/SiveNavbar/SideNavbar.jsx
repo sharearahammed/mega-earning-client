@@ -29,25 +29,30 @@ const SideNavbar = ({ loginUser }) => {
         </div>
         <div className="flex justify-center items-center lg:mr-10">
           <div>
-          {loginUser && (
-            <div className="flex  flex-col">
-              <div className="flex  items-center lg:gap-5">
-                <h1 className="text-[10px]">Available coin: {loginUser.coins}</h1>
-                <img
-                  className="lg:h-10 h-7 rounded-full"
-                  src={loginUser.image}
-                  alt=""
-                />
+            {loginUser && (
+              <div className="flex  flex-col">
+                <div className="flex  items-center lg:gap-5">
+                  <h1 className="text-[10px]">
+                    Available coin: {loginUser.coins}
+                  </h1>
+                  <img
+                    className="lg:h-10 h-7 rounded-full"
+                    src={loginUser.image}
+                    alt=""
+                  />
+                </div>
+                <div className="flex  items-center gap-5">
+                  <h1 className="text-[10px]">{loginUser.role}</h1> |
+                  <h1 className="text-[10px]">{loginUser.name}</h1>
+                </div>
               </div>
-              <div className="flex  items-center gap-5">
-                <h1 className="text-[10px]">{loginUser.role}</h1> |<h1 className="text-[10px]">{loginUser.name}</h1>
-              </div>
-            </div>
-          )}
+            )}
           </div>
           <div>
             <button className="lg:relative flex items-center justify-center">
-            <div><IoNotifications className="lg:text-3xl" /></div>
+              <div>
+                <IoNotifications className="lg:text-3xl" />
+              </div>
               <div className="text-[10px] lg:absolute -top-3 -right-4">+99</div>
             </button>
           </div>
@@ -72,191 +77,208 @@ const SideNavbar = ({ loginUser }) => {
           <div className="flex flex-col justify-between flex-1 mt-6">
             {/* Conditional toggle button here.. */}
 
-            
-            <nav>   
-                {
-                loginUser.role === 'Admin' ? (
-                    <>
-                    {/* Home */}
-              <NavLink
-                to="admin-home"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdHomeWork className="w-5 h-5" />
+            <nav>
+              {loginUser.role === "Admin" ? (
+                <>
+                  {/* Home */}
+                  <NavLink
+                    to="admin-home"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Home</span>
-              </NavLink>
-              <NavLink
-                to="manage-users"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdManageAccounts className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Home</span>
+                  </NavLink>
+                  <NavLink
+                    to="manage-users"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdManageAccounts className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Manage Users</span>
-              </NavLink>
-              <NavLink
-                to="manage-tasks"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <GrTask className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Manage Users</span>
+                  </NavLink>
+                  <NavLink
+                    to="manage-tasks"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <GrTask className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Manage Task</span>
-              </NavLink>
-                    </>
-                ) : (
-                    ""
-                )
-              }           
-              {
-                loginUser.role === 'Worker' ? (
-                    <>
-                    {/* Home */}
-              <NavLink
-                to="worker-home"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdHomeWork className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Manage Task</span>
+                  </NavLink>
+                </>
+              ) : (
+                ""
+              )}
+              {loginUser.role === "Worker" ? (
+                <>
+                  {/* Home */}
+                  <NavLink
+                    to="worker-home"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Home</span>
-              </NavLink>
-              <NavLink
-                to="worker-tasklist"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FaThList className="w-5 h-5"/>
+                    <span className="mx-4 font-medium">Home</span>
+                  </NavLink>
+                  <NavLink
+                    to="worker-tasklist"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaThList className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">TaskList</span>
-              </NavLink>
-              <NavLink
-                to="worker-submission"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FaClipboardList className="w-5 h-5" />
+                    <span className="mx-4 font-medium">TaskList</span>
+                  </NavLink>
+                  <NavLink
+                    to="worker-submission"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaClipboardList className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">My Submission</span>
-              </NavLink>
-              <NavLink
-                to="withdrawForm"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FaClipboardList className="w-5 h-5" />
+                    <span className="mx-4 font-medium">My Submission</span>
+                  </NavLink>
+                  <NavLink
+                    to="withdrawForm"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaClipboardList className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Withdrawals</span>
-              </NavLink>
-                    </>
-                ) : (
-                    ""
-                )
-              }
-              {
-                loginUser.role === 'TaskCreator' ? (
-                    <>
-                    {/* Home */}
-              <NavLink
-                to="taskCreator-home"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdHomeWork className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Withdrawals</span>
+                  </NavLink>
+                </>
+              ) : (
+                ""
+              )}
+              {loginUser.role === "TaskCreator" ? (
+                <>
+                  {/* Home */}
+                  <NavLink
+                    to="taskCreator-home"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdHomeWork className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Home</span>
-              </NavLink>
-              <NavLink
-                to="addNewTask"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <MdOutlinePostAdd className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Home</span>
+                  </NavLink>
+                  <NavLink
+                    to="addNewTask"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <MdOutlinePostAdd className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Add newTasks</span>
-              </NavLink>
-              <NavLink
-                to="my-listings"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <FaClipboardList className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Add newTasks</span>
+                  </NavLink>
+                  <NavLink
+                    to="my-listings"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <FaClipboardList className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">MyTask’s</span>
-              </NavLink>
-              <NavLink
-                to="purchase-coin"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <PiCoins className="w-5 h-5" />
+                    <span className="mx-4 font-medium">MyTask’s</span>
+                  </NavLink>
+                  <NavLink
+                    to="purchase-coin"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <PiCoins className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Purchase Coin</span>
-              </NavLink>
-              <NavLink
-                to="payment-history"
-                end
-                className={({ isActive }) =>
-                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
-                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
-                  }`
-                }
-              >
-                <HiOutlineCurrencyDollar className="w-5 h-5" />
+                    <span className="mx-4 font-medium">Purchase Coin</span>
+                  </NavLink>
+                  <NavLink
+                    to="payment-history"
+                    end
+                    className={({ isActive }) =>
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                        isActive
+                          ? "bg-gray-300  text-gray-700"
+                          : "text-gray-600"
+                      }`
+                    }
+                  >
+                    <HiOutlineCurrencyDollar className="w-5 h-5" />
 
-                <span className="mx-4 font-medium">Payment history</span>
-              </NavLink>
-                    </>
-                ) : (
-                    ""
-                )
-              }
+                    <span className="mx-4 font-medium">Payment history</span>
+                  </NavLink>
+                </>
+              ) : (
+                ""
+              )}
             </nav>
           </div>
         </div>
@@ -264,15 +286,15 @@ const SideNavbar = ({ loginUser }) => {
         <div>
           <hr />
 
-          <Link to={'/login'}>
-          <button
-            onClick={logOut}
-            className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
-          >
-            <GrLogout className="w-5 h-5" />
+          <Link to={"/login"}>
+            <button
+              onClick={logOut}
+              className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
+            >
+              <GrLogout className="w-5 h-5" />
 
-            <span className="mx-4 font-medium">Logout</span>
-          </button>
+              <span className="mx-4 font-medium">Logout</span>
+            </button>
           </Link>
         </div>
       </div>

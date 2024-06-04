@@ -23,6 +23,7 @@ const Dashboard = () => {
       <div className='relative min-h-screen md:flex'>
       {/* Sidebar */}
       <SideNavbar loginUser={loginUser} />
+      
 
       {/* Outlet --> Dynamic content */}
       <div className='flex-1 md:ml-64'>

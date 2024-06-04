@@ -1,11 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
-import useAxiosCommon from "../../Hook/useAxiosCommon";
 // import { useState } from "react";
 import ManageTaskTable from "./ManageTaskTable";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
 
 const ManageTasks = () => {
 
-    const axiospublic = useAxiosCommon();
+    const axiosSecure = useAxiosSecure();
     
 
     const {
@@ -13,7 +13,7 @@ const ManageTasks = () => {
       } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
-          const res = await axiospublic.get(`/tasks`)
+          const res = await axiosSecure.get(`/tasks`)
           console.log("------------",res.data)
           return res.data
         },

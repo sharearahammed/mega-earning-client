@@ -2,7 +2,7 @@
 
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { TbFidgetSpinner } from "react-icons/tb";
+import { ImSpinner9 } from "react-icons/im";
 
 const AddNewTasks = ({
   setStartDate,
@@ -14,7 +14,8 @@ const AddNewTasks = ({
   loading,
 }) => {
   return (
-    <div className="pt-[90px] w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
+    <div className="px-5 pt-[90px] w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
+      <h1 className="lg:text-2xl font-bold">Add Task</h1>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-10">
           <div className="space-y-6">
@@ -105,6 +106,7 @@ const AddNewTasks = ({
                 id="task_detail"
                 className="block rounded-md focus:[#2de576] w-full h-32 px-4 py-3 text-gray-800  border border-[#2de576] focus:outline-[#22AB59] "
                 name="task_detail"
+                required
               ></textarea>
             </div>
             <div className=" p-4 bg-white w-full  m-auto rounded-lg">
@@ -119,6 +121,7 @@ const AddNewTasks = ({
                       accept="image/*"
                       onChange={e=>handleImage(e.target.files[0])}
                       hidden
+                      required
                     />
                     
                     <div className='bg-[#22AB59] text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-[#22AB59]'>
@@ -145,7 +148,7 @@ const AddNewTasks = ({
           className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#22AB59]'
         >
           {loading ? (
-            <TbFidgetSpinner className='animate-spin m-auto' />
+            <ImSpinner9 className='animate-spin m-auto' />
           ) : (
             ' Add Task'
           )}

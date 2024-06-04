@@ -38,6 +38,7 @@ const TaskCreatorHomeTable = ({ submission,refetch }) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
           toast.success("Worker Submission Rejected");
+          refetch()
         }
       });
   };

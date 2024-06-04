@@ -93,7 +93,7 @@ const SignUp = () => {
     try {
       await signInWithGoogle();
       toast.success("Signin Successfully!");
-      navigate("/");
+      navigate("/dashboard");
     } catch (err) {
       console.log(err);
       toast.error(err.message);

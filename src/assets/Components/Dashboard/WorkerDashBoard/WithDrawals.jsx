@@ -3,7 +3,7 @@ import { useState } from "react";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import useAuth from "../../Hook/useAuth";
 import toast from "react-hot-toast";
-import { TbFidgetSpinner } from "react-icons/tb";
+import { ImSpinner9 } from "react-icons/im";
 
 const WithdrawForm = () => {
   const axiosSecure = useAxiosSecure();
@@ -147,7 +147,7 @@ const WithdrawForm = () => {
           className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#22AB59]'
         >
           {loading ? (
-            <TbFidgetSpinner className='animate-spin m-auto' />
+            <ImSpinner9 className='animate-spin m-auto' />
           ) : (
             ' Withdraw'
           )}

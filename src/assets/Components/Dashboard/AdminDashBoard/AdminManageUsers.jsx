@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import ManageUsersTable from "./ManageUsersTable";
+import LoadingSpinner from "../../Shareds/Shared";
 
 const AdminManageUsers = () => {
     const axiosSecure = useAxiosSecure()
     const {
-        data: users = [],refetch
+        data: userss = [""],refetch,isLoading
       } = useQuery({
         queryKey: ['userCoin'],
         queryFn: async () => {
@@ -13,7 +14,7 @@ const AdminManageUsers = () => {
           return res.data
         },
       })
-
+ if(isLoading) <LoadingSpinner />
     return (
         <div className="pt-[90px]">
           <div className="">
@@ -35,11 +36,11 @@ const AdminManageUsers = () => {
               </thead>
               <tbody>
                 {
-                    users?.filter(a=>a.role === 'Worker')?.map((user)=><ManageUsersTable 
-                        key={user._id}
-                        user={user}
-                        refetch={refetch}
-                         />)
+                  userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
+                  key={user._id}
+                  user={user}
+                  refetch={refetch}
+                   />) : "Please Reload the Page Again"
                 }
               </tbody>
             </table>

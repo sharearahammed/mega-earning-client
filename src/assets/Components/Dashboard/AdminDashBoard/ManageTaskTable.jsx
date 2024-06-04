@@ -47,12 +47,12 @@ const ManageTaskTable = ({ task, refetch ,idx}) => {
         <td>{task?.task_quantity > 0 ? "Available" : "Not Available"}</td>
 
         <td>
-          <button onClick={() => setIsOpen(true)}>View</button>
+          <button className="bg-gray-300 flex justify-center items-center px-3 py-2 rounded-lg" onClick={() => setIsOpen(true)}>View</button>
         </td>
 
         <td>
           <button
-            className="bg-red-300 flex justify-center items-center p-1 rounded-lg"
+            className="bg-red-300 flex justify-center items-center px-3 py-2 rounded-lg"
             onClick={handleDeleteTask}
           >
             Delete
