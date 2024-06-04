@@ -11,7 +11,7 @@ const AddNewTasks = ({
   handleSubmit,
   handleImage,
   imageText,
-  loading
+  loading,
 }) => {
   return (
     <div className="pt-[90px] w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
@@ -23,7 +23,7 @@ const AddNewTasks = ({
                 Task Title
               </label>
               <input
-                className="w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-[#FF5851] rounded-md "
+                className="w-full px-4 py-3 text-gray-800 border border-[#2de576] focus:outline-[#22AB59] rounded-md "
                 name="task_title"
                 id="name"
                 type="text"
@@ -38,7 +38,7 @@ const AddNewTasks = ({
                   Payable Amount
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-[#FF5851] rounded-md "
+                  className="w-full px-4 py-3 text-gray-800 border border-[#2de576] focus:outline-[#22AB59] rounded-md "
                   name="payable_amount"
                   id="payable_amount"
                   type="number"
@@ -52,7 +52,7 @@ const AddNewTasks = ({
                   Task Quantity
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-[#FF5851] rounded-md "
+                  className="w-full px-4 py-3 text-gray-800 border border-[#2de576] focus:outline-[#22AB59] rounded-md "
                   name="task_quantity"
                   id="guest"
                   type="number"
@@ -71,7 +71,7 @@ const AddNewTasks = ({
                   Submission Info
                 </label>
                 <input
-                  className="w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-[#FF5851] rounded-md "
+                  className="w-full px-4 py-3 text-gray-800 border border-[#2de576] focus:outline-[#22AB59] rounded-md "
                   name="submission_info"
                   id="submission_info"
                   type="text"
@@ -89,7 +89,7 @@ const AddNewTasks = ({
                 </label>
 
                 <DatePicker
-                  className="w-full px-4 py-3 text-gray-800 border border-rose-300 focus:outline-[#FF5851] rounded-md"
+                  className="w-full px-4 py-3 text-gray-800 border border-[#2de576] focus:outline-[#22AB59] rounded-md"
                   selected={startDate}
                   onChange={(date) => setStartDate(date)}
                 />
@@ -103,7 +103,7 @@ const AddNewTasks = ({
 
               <textarea
                 id="task_detail"
-                className="block rounded-md focus:rose-300 w-full h-32 px-4 py-3 text-gray-800  border border-rose-300 focus:outline-[#FF5851] "
+                className="block rounded-md focus:[#2de576] w-full h-32 px-4 py-3 text-gray-800  border border-[#2de576] focus:outline-[#22AB59] "
                 name="task_detail"
               ></textarea>
             </div>
@@ -121,7 +121,7 @@ const AddNewTasks = ({
                       hidden
                     />
                     
-                    <div className='bg-[#FF5851] text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-[#FF5851]'>
+                    <div className='bg-[#22AB59] text-white border border-gray-300 rounded font-semibold cursor-pointer p-1 px-3 hover:bg-[#22AB59]'>
                       {/* {imageText} */}
                       {imageText.length > 20
                         ? imageText.split('.')[0].slice(0, 15) +
@@ -142,7 +142,7 @@ const AddNewTasks = ({
         <button
           disabled={loading}
           type='submit'
-          className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#FF5851]'
+          className='w-full p-3 mt-5 text-center font-medium text-white transition duration-200 rounded shadow-md bg-[#22AB59]'
         >
           {loading ? (
             <TbFidgetSpinner className='animate-spin m-auto' />

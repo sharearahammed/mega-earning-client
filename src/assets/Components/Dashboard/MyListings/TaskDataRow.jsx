@@ -19,7 +19,7 @@ const TaskDataRow = ({task,handleDelete,refetch}) => {
         <p className='text-gray-900 whitespace-no-wrap'>{task?.task_title}</p>
       </td>
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
-        <p className='text-gray-900 whitespace-no-wrap'>{task?.task_title}</p>
+        <p className='text-gray-900 whitespace-no-wrap'>{task?.task_quantity}</p>
       </td>
       <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>${task?.payable_amount}</p>

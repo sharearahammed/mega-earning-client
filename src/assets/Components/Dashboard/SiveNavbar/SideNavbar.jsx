@@ -23,7 +23,7 @@ const SideNavbar = ({ loginUser }) => {
       {/* Small Screen Navbar */}
       <div className="fixed z-10 bg-gray-100 text-gray-800 flex justify-between w-full">
         <div>
-          <div className="items-center block cursor-pointer p-4 font-bold text-[10px] lg:text-2xl bg-gradient-to-r from-[#E63946] to-[#FB8B24]  bg-clip-text text-transparent">
+          <div className="items-center block cursor-pointer p-4 font-bold text-[10px] lg:text-2xl bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
             <Link to="/">MEGAEARNING</Link>
           </div>
         </div>
@@ -63,9 +63,9 @@ const SideNavbar = ({ loginUser }) => {
 
       {/* Sidebar */}
       <div
-        className={`mt-[50px] lg:mt-14  md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
+        className={`z-10 mt-[50px] lg:mt-14  md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && "-translate-x-full"
-        }  md:translate-x-0  transition duration-200 ease-in-out`}
+        }  md:translate-x-0  transition duration-700 ease-in-out`}
       >
         <div>
           {/* Nav Items */}
@@ -79,7 +79,7 @@ const SideNavbar = ({ loginUser }) => {
                     <>
                     {/* Home */}
               <NavLink
-                to="my-"
+                to="admin-home"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -92,7 +92,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">Home</span>
               </NavLink>
               <NavLink
-                to="mys"
+                to="manage-users"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -105,7 +105,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">Manage Users</span>
               </NavLink>
               <NavLink
-                to="my-lings"
+                to="manage-tasks"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -127,7 +127,7 @@ const SideNavbar = ({ loginUser }) => {
                     <>
                     {/* Home */}
               <NavLink
-                to="my"
+                to="worker-home"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -140,7 +140,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">Home</span>
               </NavLink>
               <NavLink
-                to="my-"
+                to="worker-tasklist"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -153,7 +153,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">TaskList</span>
               </NavLink>
               <NavLink
-                to="my-s"
+                to="worker-submission"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -165,6 +165,19 @@ const SideNavbar = ({ loginUser }) => {
 
                 <span className="mx-4 font-medium">My Submission</span>
               </NavLink>
+              <NavLink
+                to="withdrawForm"
+                end
+                className={({ isActive }) =>
+                  `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                    isActive ? "bg-gray-300  text-gray-700" : "text-gray-600"
+                  }`
+                }
+              >
+                <FaClipboardList className="w-5 h-5" />
+
+                <span className="mx-4 font-medium">Withdrawals</span>
+              </NavLink>
                     </>
                 ) : (
                     ""
@@ -175,7 +188,7 @@ const SideNavbar = ({ loginUser }) => {
                     <>
                     {/* Home */}
               <NavLink
-                to="/"
+                to="taskCreator-home"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -214,7 +227,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">MyTask’s</span>
               </NavLink>
               <NavLink
-                to="my-kl"
+                to="purchase-coin"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -227,7 +240,7 @@ const SideNavbar = ({ loginUser }) => {
                 <span className="mx-4 font-medium">Purchase Coin</span>
               </NavLink>
               <NavLink
-                to="my-"
+                to="payment-history"
                 end
                 className={({ isActive }) =>
                   `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
@@ -251,6 +264,7 @@ const SideNavbar = ({ loginUser }) => {
         <div>
           <hr />
 
+          <Link to={'/login'}>
           <button
             onClick={logOut}
             className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
@@ -259,6 +273,7 @@ const SideNavbar = ({ loginUser }) => {
 
             <span className="mx-4 font-medium">Logout</span>
           </button>
+          </Link>
         </div>
       </div>
     </div>

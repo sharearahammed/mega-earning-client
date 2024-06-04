@@ -10,7 +10,7 @@ const LoadingSpinner = ({ smallHeight }) => {
       justify-center 
       items-center `}
     >
-      <RiseLoader size={20} color="#ff5851" />
+      <RiseLoader size={20} color="#22AB59" />
 
     </div>
   )

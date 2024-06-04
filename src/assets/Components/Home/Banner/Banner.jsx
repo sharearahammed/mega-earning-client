@@ -13,7 +13,7 @@ const Banner = () => {
               'url("https://i.ibb.co/mt3SSC9/Empower-Yourself.jpg")',
           }}>
                     <div className="bg-black h-full w-full bg-opacity-70 flex flex-col items-center justify-center text-white">
-                    <h1 className="pb-5 font-bold text-3xl lg:text-[90px]">Empower Yourself</h1>
+                    <h1 className="lg:mb-10 pb-5 font-bold text-3xl lg:text-[90px]">Empower Yourself</h1>
                     <p className="lg:text-[20px]">Flexible Work, Secure Payments, Endless Possibilities</p>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ const Banner = () => {
           }}>
                    
                    <div className="bg-black h-full w-full bg-opacity-70 flex flex-col items-center justify-center text-white">
-                    <h1 className="lg:px-0 px-3 pb-5 font-bold text-3xl lg:text-[90px]">Unlock Your Potential</h1>
+                    <h1 className="lg:mb-10 lg:px-0 px-3 pb-5 font-bold text-3xl lg:text-[90px]">Unlock Your Potential</h1>
                     <p className="lg:px-0 px-4 text-[20px]">Join Our Platform and Start Earning Today!</p>
                     </div>
                 </div>
@@ -34,7 +34,7 @@ const Banner = () => {
               'url("https://i.ibb.co/HX63Qsm/Seize-Opportunities.jpg")',
           }}>
                     <div className="bg-black h-full w-full bg-opacity-70 flex flex-col items-center justify-center text-white">
-                    <h1 className="lg:px-0 *:px-5 pb-5 font-bold text-3xl lg:text-[90px]">Seize Opportunities</h1>
+                    <h1 className="lg:mb-10 lg:px-0 *:px-5 pb-5 font-bold text-3xl lg:text-[90px]">Seize Opportunities</h1>
                     <p className="text-[20px]">Earn Rewards for Completing Simple Tasks</p>
                     </div>
                     

@@ -83,7 +83,7 @@ const Login = () => {
                 id='email'
                 required
                 placeholder='Enter Your Email Here'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#FF5851] bg-white text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#22AB59] bg-white text-gray-900'
                 data-temp-mail-org='0'
               />
             </div>
@@ -100,7 +100,7 @@ const Login = () => {
                 id='password'
                 required
                 placeholder='*******'
-                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#FF5851] bg-white text-gray-900'
+                className='w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#22AB59] bg-white text-gray-900'
               />
             </div>
           </div>
@@ -109,7 +109,7 @@ const Login = () => {
             <button
               disabled={loading}
               type='submit'
-              className='bg-[#FF5851] w-full rounded-md py-3 text-white'
+              className='bg-[#22AB59] w-full rounded-md py-3 text-white'
             >
               {loading ? (
                 <ImSpinner9 className='text-2xl animate-spin m-auto' />
@@ -122,7 +122,7 @@ const Login = () => {
         <div className='space-y-1'>
           <button
             onClick={handleResetPassword}
-            className='text-xs hover:underline hover:text-[#FF5851] text-gray-400'
+            className='text-xs hover:underline hover:text-[#22AB59] text-gray-400'
           >
             Forgot password?
           </button>
@@ -149,7 +149,7 @@ const Login = () => {
           Don&apos;t have an account yet?{' '}
           <Link
             to='/signup'
-            className='hover:underline hover:text-[#FF5851] text-gray-600'
+            className='hover:underline hover:text-[#22AB59] text-gray-600'
           >
             Sign up
           </Link>

@@ -7,23 +7,23 @@ const Footer = () => {
             <div className="bg-gray-100">
     <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         
-        <div className="p-5 text-xl font-extrabold bg-gradient-to-r from-[#E63946] to-[#FB8B24]  bg-clip-text text-transparent">
+        <div className="p-5 text-xl font-extrabold bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
               <Link to={"/"}>MEGAEARNING</Link>
             </div>
         <div className="p-5">
-            <div className="text-sm uppercase text-[#E63946] font-bold">Resources</div>
+            <div className="text-sm uppercase text-[#22AB59] font-bold">Resources</div>
             <a className="my-3 block" href="/#">Documentation <span className="text-teal-600 text-xs p-1"></span></a><a
                 className="my-3 block" href="/#">Tutorials <span className="text-teal-600 text-xs p-1"></span></a><a
                 className="my-3 block" href="/#">Support <span className="text-teal-600 text-xs p-1">New</span></a>
         </div>
         <div className="p-5">
-            <div className="text-sm uppercase text-[#E63946] font-bold">Support</div>
+            <div className="text-sm uppercase text-[#22AB59] font-bold">Support</div>
             <a className="my-3 block" href="/#">Help Center <span className="text-teal-600 text-xs p-1"></span></a><a
                 className="my-3 block" href="/#">Privacy Policy <span className="text-teal-600 text-xs p-1"></span></a><a
                 className="my-3 block" href="/#">Conditions <span className="text-teal-600 text-xs p-1"></span></a>
         </div>
         <div className="p-5">
-            <div className="text-sm uppercase text-[#E63946] font-bold">Contact us</div>
+            <div className="text-sm uppercase text-[#22AB59] font-bold">Contact us</div>
             <a className="my-3 block" href="/#">XXX XXXX, Floor 4 San Francisco, CA
                 <span className="text-teal-600 text-xs p-1"></span></a><a className="my-3 block" href="/#">contact@company.com
                 <span className="text-teal-600 text-xs p-1"></span></a>
@@ -36,7 +36,7 @@ const Footer = () => {
       max-w-screen-lg items-center">
         <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
             <a href="https://x.com/NihalSharear" className="w-6 mx-1">
-                <svg className="fill-current cursor-pointer text-[#E63946] hover:text-gray-500" width="100%" height="100%"
+                <svg className="fill-current cursor-pointer text-[#22AB59] hover:text-gray-500" width="100%" height="100%"
                     viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     
                     >
@@ -57,7 +57,7 @@ const Footer = () => {
                 </svg>
             </a>
             <a href="https://www.facebook.com/Sharear.Ahammed.10" className="w-6 mx-1">
-                <svg className="fill-current cursor-pointer text-[#E63946] hover:text-gray-500" width="100%" height="100%"
+                <svg className="fill-current cursor-pointer text-[#22AB59] hover:text-gray-500" width="100%" height="100%"
                     viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     
                     >
@@ -70,7 +70,7 @@ const Footer = () => {
             </a>
             
             <a href="https://www.linkedin.com/in/sharear-ahammed-nihal" className="w-6 mx-1">
-                <svg className="fill-current cursor-pointer text-[#E63946] hover:text-gray-500" width="100%" height="100%"
+                <svg className="fill-current cursor-pointer text-[#22AB59] hover:text-gray-500" width="100%" height="100%"
                     viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     
                     >
@@ -91,7 +91,7 @@ const Footer = () => {
                 </svg>
             </a>
             <a href="https://github.com/sharearahammed" className="w-6 mx-1">
-                <div className="fill-current cursor-pointer text-[#E63946] hover:text-gray-500">
+                <div className="fill-current cursor-pointer text-[#22AB59] hover:text-gray-500">
                     <AiFillGithub className="text-[27px]" />
                 </div>
             </a>

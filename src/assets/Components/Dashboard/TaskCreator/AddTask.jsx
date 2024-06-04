@@ -30,7 +30,7 @@ const AddTask = () => {
     },
   })
 
-  const { data : loginUser = [] } = useQuery({
+  const { data : loginUser = [],refetch } = useQuery({
     queryKey: ['user'],
     queryFn: async()=>{
         const {data} = await axiosSecure.get(`/users/${user.email}`)
@@ -84,6 +84,7 @@ console.log(availableCount)
     }
       //   Post request to server
       await mutateAsync(taskdata)
+      refetch()
     } catch (err) {
       console.log(err)
       toast.error(err.message)

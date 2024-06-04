@@ -58,9 +58,8 @@ const SignUp = () => {
       return;
     }
 
-
     try {
-      setLoading(true)
+      setLoading(true);
       // 1. Upload image and get image url
       const image_url = await imageUpload(image);
       console.log(image_url);
@@ -68,25 +67,25 @@ const SignUp = () => {
       await axiosPublic
         .post("/users", { ...userInfo, image: image_url })
         .then((res) => {
-          console.log(res.data)
+          console.log(res.data);
           if (res.data.upsertedId) {
-            console.log('-----------------------',res);
+            console.log("-----------------------", res);
             toast.success("User Create Successfully!");
           }
-          navigate("/login");
-          logOut();
         });
       //2. User Registration
-      const result = await createUser(email, password)
+      const result = await createUser(email, password);
       console.log(result);
       // 3. Save username and photo in firebase
       await updateUserProfile(name, image_url);
+      logOut();
+      navigate("/login");
     } catch (err) {
       setLoading(false);
       console.log(err);
       toast.error(err.message);
     }
-    setLoading(false)
+    setLoading(false);
   };
 
   // handle google signin
@@ -181,7 +180,7 @@ const SignUp = () => {
             <button
               disabled={loading}
               type="submit"
-              className="bg-[#FF5851] w-full rounded-md py-3 text-white"
+              className="bg-[#22AB59] w-full rounded-md py-3 text-white"
             >
               {loading ? (
                 <ImSpinner9 className="text-2xl animate-spin m-auto" />
@@ -211,7 +210,7 @@ const SignUp = () => {
           Already have an account?{" "}
           <Link
             to="/login"
-            className="hover:underline hover:text-[#FF5851] text-gray-600"
+            className="hover:underline hover:text-[#22AB59] text-gray-600"
           >
             Login
           </Link>

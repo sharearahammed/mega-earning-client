@@ -11,7 +11,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-[#FF5851] font-bold rounded-lg"
+              ? "text-[#22AB59] font-bold rounded-lg"
               : isPending
               ? "pending"
               : ""
@@ -27,7 +27,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#FF5851] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-lg"
                   : isPending
                   ? "pending"
                   : ""
@@ -41,7 +41,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#FF5851] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-lg"
                   : isPending
                   ? "pending"
                   : ""
@@ -55,12 +55,12 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#FF5851] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-lg"
                   : isPending
                   ? "pending"
                   : ""
               }
-              to={"/contact"}
+              to={"/userProfile"}
             >
               User Profile
             </NavLink>
@@ -74,7 +74,7 @@ const Navbar = () => {
       <div className="container px-6 py-4 mx-auto">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
-            <div className="lg:text-2xl font-extrabold bg-gradient-to-r from-[#E63946] to-[#FB8B24]  bg-clip-text text-transparent">
+            <div className="lg:text-2xl font-extrabold bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
               <Link to={"/"}>MEGAEARNING</Link>
             </div>
 
@@ -137,7 +137,7 @@ const Navbar = () => {
               <div>
                 <button
                   onClick={() => logOut()}
-                  className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl"
+                  className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl"
                 >
                   Logout
                 </button>
@@ -145,16 +145,16 @@ const Navbar = () => {
             ) : (
               <div className="flex gap-2 items-center mt-4 lg:mt-0">
                 <Link to={"/login"}>
-                  <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                  <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
                     Login
                   </button>
                 </Link>
                 <Link to={"/signUp"}>
-                  <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                  <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
                     Register
                   </button>
                 </Link>
-                <button className="bg-[#FF5851] text-white px-7 py-2 rounded-3xl">
+                <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
                   <a href="https://www.youtube.com/watch?v=aF5wEhVh2ZY">
                     WatchDemo
                   </a>
