@@ -36,7 +36,7 @@ const AdminManageUsers = () => {
               </thead>
               <tbody>
                 {
-                  userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
+                  userss && userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
                   key={user._id}
                   user={user}
                   refetch={refetch}

@@ -27,9 +27,12 @@ axiosSecure.interceptors.response.use((response)=>{
 },async(err)=>{
     const status = err.response.status;
     console.log('status error in the interceptor',status)
-    if(status === 401 || status === 403){
+    if(status === 401 || status === 400){
         await logOut();
         navigate('/login')
+    }
+    else if (status === 403) {
+      navigate('forbidden');
     }
     return Promise.reject(err)
 })

@@ -8,7 +8,7 @@ const AdminRoute = ({ children }) => {
 
   if (isLoading) return <LoadingSpinner />
   if (role === 'Admin') return children
-  return <Navigate to='/dashboard' />
+  return <Navigate to='/forbidden' />
 }
 
 export default AdminRoute

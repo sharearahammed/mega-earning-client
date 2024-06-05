@@ -10,7 +10,7 @@ const WorkerRoute = ({ children }) => {
 
   if (isLoading) return <LoadingSpinner />
   if (role === 'Worker') return children
-  return <Navigate to='/dashboard' />
+  return <Navigate to='/forbidden' />
 }
 
 export default WorkerRoute

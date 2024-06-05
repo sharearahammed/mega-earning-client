@@ -24,6 +24,7 @@ import AdminRoute from "./AdminRoute";
 import TaskCreatorRoute from "./TaskCreatorRoute";
 import WorkerRoute from "./WorkerRoute";
 import DashboardHome from "../Components/Dashboard/DashboardHome";
+import ForbiddenPage from "../Components/ErrorPage/ForbiddenPage";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,11 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path:"forbidden",
+        element:<ForbiddenPage />
+      }
+      ,
       {
         path: "/login",
         element: <Login />,
@@ -70,6 +76,11 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
       },
+      {
+        path:"forbidden",
+        element:<ForbiddenPage />
+      }
+      ,
       // TaskCreator
       {
         element: (

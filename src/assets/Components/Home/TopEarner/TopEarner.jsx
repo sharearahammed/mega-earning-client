@@ -1,5 +1,20 @@
+import { useQuery } from "@tanstack/react-query";
+import useAxiosCommon from "../../Hook/useAxiosCommon";
 
 const TopEarner = () => {
+    const axiosPublic = useAxiosCommon();
+    const {data : topearners = []} = useQuery({
+        queryKey:['topearners'],
+        queryFn: async ()=>{
+            const res = await axiosPublic.get('/topEarners')
+            return res.data;
+        }
+    })
+    // status
+
+    console.log("topearner",topearners)
+
+
     return (
 <section id="our-team" className="bg-gray-100 py-32">
     <div className="container mx-auto px-4">
