@@ -22,7 +22,6 @@ const MyListings = () => {
       return data;
     },
   });
-  
 
   //   delete
   const { mutateAsync } = useMutation({
@@ -32,7 +31,7 @@ const MyListings = () => {
     },
     onSuccess: (data) => {
       console.log(data);
-        toast.success("Successfully deleted.");
+      toast.success("Successfully deleted.");
       refetch();
     },
   });
@@ -50,7 +49,7 @@ const MyListings = () => {
   return (
     <>
       <Helmet>
-        <title>My Listings</title>
+        <title>Dashboard | My Listings</title>
       </Helmet>
 
       <div className="container mx-auto px-4 sm:px-8">

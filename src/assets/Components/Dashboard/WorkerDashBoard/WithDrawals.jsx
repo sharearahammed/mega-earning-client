@@ -4,6 +4,7 @@ import useAxiosSecure from "../../Hook/useAxiosSecure";
 import useAuth from "../../Hook/useAuth";
 import toast from "react-hot-toast";
 import { ImSpinner9 } from "react-icons/im";
+import { Helmet } from "react-helmet-async";
 
 const WithdrawForm = () => {
   const axiosSecure = useAxiosSecure();
@@ -86,6 +87,9 @@ const WithdrawForm = () => {
 
   return (
     <div className="mt-20 w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
+       <Helmet>
+        <title>Dashboard | Withdrawals</title>
+      </Helmet>
       <div className='space-y-6'>
       <div className='space-y-1'>
       <h1 className="text-2xl font-bold">Conversion Rate: 20 Coins = 1 Dollar</h1>

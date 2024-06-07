@@ -5,7 +5,7 @@ import useAxiosSecure from "../../Hook/useAxiosSecure";
 import { useState } from "react";
 import SubmissionDetailsModal from "./SubmissionDetailsModal";
 
-const TaskCreatorHomeTable = ({ submission,refetch }) => {
+const TaskCreatorHomeTable = ({ submission, refetch }) => {
   const axiosSecure = useAxiosSecure();
   const [isOpen, setIsOpen] = useState(false);
   const closeModal = () => {
@@ -23,7 +23,12 @@ const TaskCreatorHomeTable = ({ submission,refetch }) => {
         console.log(res.data);
         if (res.data.result.modifiedCount > 0) {
           toast.success("Worker Submission Approved");
-          refetch()
+          refetch();
+          axiosSecure.post("/notifications", {
+            message: `You have earned $${submission.payable_amount} from ${submission.creator_name} for completing ${submission.task_title}`,
+            toEmail: submission.worker_email,
+            time: new Date(),
+          });
         }
       });
   };
@@ -38,7 +43,7 @@ const TaskCreatorHomeTable = ({ submission,refetch }) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
           toast.success("Worker Submission Rejected");
-          refetch()
+          refetch();
         }
       });
   };
@@ -51,7 +56,14 @@ const TaskCreatorHomeTable = ({ submission,refetch }) => {
           <td>{submission.worker_email}</td>
           <td>{submission.task_title}</td>
           <td>${submission.payable_amount}</td>
-          <td><button onClick={() => setIsOpen(true)} className="bg-gray-300 flex justify-center items-center px-3 py-1 rounded-xl">Detais</button></td>
+          <td>
+            <button
+              onClick={() => setIsOpen(true)}
+              className="bg-gray-300 flex justify-center items-center px-3 py-1 rounded-xl"
+            >
+              Detais
+            </button>
+          </td>
           <td>
             <button
               onClick={handleApprove}
@@ -68,12 +80,12 @@ const TaskCreatorHomeTable = ({ submission,refetch }) => {
               Reject
             </button>
           </td>
-          <SubmissionDetailsModal isOpen={isOpen}
-          closeModal={closeModal}
-          submission={submission}
+          <SubmissionDetailsModal
+            isOpen={isOpen}
+            closeModal={closeModal}
+            submission={submission}
           />
         </tr>
-        
       ) : (
         ""
       )}

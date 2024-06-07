@@ -2,6 +2,7 @@ import useAxiosSecure from "../../Hook/useAxiosSecure";
 import useAuth from "../../Hook/useAuth";
 import WorkerSubmissionTable from "./WorkerSubmissionTable";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 
 const WorkerSubmission = () => {
   const [itemsPerPage, setItemsPerPage] = useState(5);
@@ -15,7 +16,7 @@ const WorkerSubmission = () => {
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axiosSecure.get(`/submissions?page=${currentPage}&size=${itemsPerPage}`);
+        const { data } = await axiosSecure.get(`/submissions?page=${currentPage}&size=${itemsPerPage}&email=${user?.email}`);
         setWorkerSubs(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -29,16 +30,16 @@ const WorkerSubmission = () => {
     useEffect(() => {
     const getCount = async () => {
       try {
-        const { data } = await axiosSecure.get(`/totalSubmissions`);
-        setCount(data.result);
+        const { data } = await axiosSecure.get(`/totalSubmissions/${user?.email}`);
+        setCount(data.result.length);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
-    if (user.email) {
-      getCount();
-    }
+    getCount();
   }, [axiosSecure, user.email]);
+
+  console.log("count",count)
 
   const numberOfPages = Math.ceil(count / itemsPerPage);
 
@@ -50,6 +51,9 @@ const WorkerSubmission = () => {
 
   return (
     <div className="mt-16 overflow-x-auto w-full">
+       <Helmet>
+        <title>Dashboard | My Submission</title>
+      </Helmet>
       <table className="table">
         {/* head */}
         <thead>

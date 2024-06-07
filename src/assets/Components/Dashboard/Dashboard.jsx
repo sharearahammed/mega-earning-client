@@ -3,11 +3,13 @@ import useAxiosSecure from "../Hook/useAxiosSecure";
 import SideNavbar from "./SiveNavbar/SideNavbar";
 import useAuth from "../Hook/useAuth";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+import LoadingSpinner from "../Shareds/Shared";
 
 
 
 const Dashboard = () => {
-    const {user} = useAuth()
+    const {user,loading} = useAuth()
     const axiosSecure = useAxiosSecure();
     const { data : loginUser = [] } = useQuery({
         queryKey: ['user'],
@@ -16,11 +18,15 @@ const Dashboard = () => {
             return data
         }
     })
+    if(loading) return <LoadingSpinner />
 
   return (
       
     
       <div className='relative min-h-screen md:flex'>
+        <Helmet>
+        <title>Dashboard | Home</title>
+      </Helmet>
       {/* Sidebar */}
       <SideNavbar loginUser={loginUser} />
       

@@ -118,7 +118,7 @@ const SignUp = () => {
                 name="name"
                 id="name"
                 placeholder="Enter Your Name Here"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-white text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#22AB59] bg-white text-gray-900"
                 data-temp-mail-org="0"
               />
             </div>
@@ -132,7 +132,7 @@ const SignUp = () => {
                 id="email"
                 required
                 placeholder="Enter Your Email Here"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-white text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#22AB59] bg-white text-gray-900"
                 data-temp-mail-org="0"
               />
             </div>
@@ -161,18 +161,20 @@ const SignUp = () => {
                 id="password"
                 required
                 placeholder="*******"
-                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-rose-500 bg-white text-gray-900"
+                className="w-full px-3 py-2 border rounded-md border-gray-300 focus:outline-[#22AB59] bg-white text-gray-900"
               />
             </div>
             <div>
               <label htmlFor="" className="text-sm mb-2">
                 Role:
-              </label>
-              <select name="role" className="ml-4 p-2">
+              </label><br />
+            </div>
+            <div>
+              <select name="role" className="focus:outline-[#22AB59] p-2 rounded-md w-full">
                 <option value="Worker">Worker</option>
                 <option value="TaskCreator">TaskCreator</option>
               </select>
-            </div>
+              </div>
             {error && <p className="text-red-600">{error}</p>}
           </div>
 

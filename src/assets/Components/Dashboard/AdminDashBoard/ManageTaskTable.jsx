@@ -43,6 +43,7 @@ const ManageTaskTable = ({ task, refetch ,idx}) => {
         <td>{task?.task_title}</td>
         <td>{task?.taskCreator.name}</td>
         <td>{task?.task_quantity}</td>
+        <td>${task?.payable_amount}</td>
         <td>{task?.totalDeduction}</td>
         <td>{task?.task_quantity > 0 ? "Available" : "Not Available"}</td>
 

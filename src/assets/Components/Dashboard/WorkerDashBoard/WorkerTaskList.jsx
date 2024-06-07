@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import WorkerTaskListCard from "./WorkerTaskListCard";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
+import { Helmet } from "react-helmet-async";
 
 const WorkerTaskList = () => {
 
@@ -17,6 +18,9 @@ const WorkerTaskList = () => {
 
     return (
         <section className="relative overflow-hidden py-10">
+           <Helmet>
+        <title>Dashboard | Task List</title>
+      </Helmet>
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="mx-auto text-center">
       <h2 className="mt-5 font-display text-3xl tracking-tight text-slate-800 sm:text-4xl">All Tasks</h2>

@@ -9,10 +9,27 @@ import { IoNotifications } from "react-icons/io5";
 import { FaClipboardList, FaThList } from "react-icons/fa";
 import { PiCoins } from "react-icons/pi";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosSecure from "../../Hook/useAxiosSecure";
+import NotificationModal from "./NotificationModal";
 
 const SideNavbar = ({ loginUser }) => {
-  const { logOut } = useAuth();
+  const { user, logOut } = useAuth();
+  const axiosSecure = useAxiosSecure();
   const [isActive, setActive] = useState(false);
+
+  // for notification
+  const [isOpen, setIsOpen] = useState(false);
+  const closeModal = () => {
+    setIsOpen(false);
+  };
+  const { data: notifications = [], refetch } = useQuery({
+    queryKey: ["notifications"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/notifications?toEmail=${user.email}`);
+      return res.data;
+    },
+  });
 
   // Sidebar Responsive Handler
   const handleToggle = () => {
@@ -50,10 +67,18 @@ const SideNavbar = ({ loginUser }) => {
           </div>
           <div>
             <button className="lg:relative flex items-center justify-center">
-              <div>
-                <IoNotifications className="lg:text-3xl" />
+              <div onClick={() => setIsOpen(true)}>
+                <IoNotifications
+                  className="lg:text-3xl"
+                /> 
               </div>
-              <div className="text-[10px] lg:absolute -top-3 -right-4">+99</div>
+              <NotificationModal
+                    key={notifications._id}
+                    notifications={notifications}
+                    isOpen={isOpen}
+                    closeModal={closeModal}
+                  />
+              <div className="text-[10px] lg:absolute -top-3 -right-4">+{notifications.length}</div>
             </button>
           </div>
         </div>

@@ -18,7 +18,7 @@ const TaskCreatorHome = () => {
         return res.data
       },
     })
-console.log('user total coin',userCoin.coins) 
+ 
 
 // taskCollection
 const {
@@ -32,8 +32,6 @@ const {
 })
 const totalTaskQuantity = tasks.reduce((total, item) => total + item.task_quantity, 0);
 
-console.log('current user tasks:',tasks)
-console.log('current user totalTaskQuantity:',totalTaskQuantity)
 
 // total payment paid by user
 const {
@@ -48,8 +46,6 @@ const {
 
 const totalpayment = payments.reduce((total, item) => total + item.cart.price, 0);
 
-console.log('current user paymentlist:',payments)
-console.log('current user totalPayment:',totalpayment)
 
   const { data: submissions = [],refetch } = useQuery({
     queryKey: ["submissions"],
@@ -58,7 +54,7 @@ console.log('current user totalPayment:',totalpayment)
       return res.data;
     },
   });
-  console.log(submissions)
+
   return (
     <div className="pt-[90px]">
 

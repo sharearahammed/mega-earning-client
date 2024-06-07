@@ -6,6 +6,7 @@ import useAuth from "../../Hook/useAuth";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { imageUpload } from "../../api/utils";
+import { Helmet } from "react-helmet-async";
 
 const AddTask = () => {
     const navigate = useNavigate()
@@ -101,6 +102,9 @@ console.log(availableCount)
 
     return (
         <>
+         <Helmet>
+        <title>Dashboard | Add Task</title>
+      </Helmet>
         <AddNewTasks
         setStartDate={setStartDate}
         startDate={startDate}

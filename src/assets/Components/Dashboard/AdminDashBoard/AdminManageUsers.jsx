@@ -2,11 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import ManageUsersTable from "./ManageUsersTable";
 import LoadingSpinner from "../../Shareds/Shared";
+import { Helmet } from "react-helmet-async";
 
 const AdminManageUsers = () => {
     const axiosSecure = useAxiosSecure()
     const {
-        data: userss = [""],refetch,isLoading
+        data: userss = [],refetch,isLoading
       } = useQuery({
         queryKey: ['userCoin'],
         queryFn: async () => {
@@ -17,6 +18,9 @@ const AdminManageUsers = () => {
  if(isLoading) <LoadingSpinner />
     return (
         <div className="pt-[90px]">
+          <Helmet>
+        <title>Dashboard | Users</title>
+      </Helmet>
           <div className="">
           <div className="overflow-x-auto">
             <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white mb-3">All Workers:</h1>

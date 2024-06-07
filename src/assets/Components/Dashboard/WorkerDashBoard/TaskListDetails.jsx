@@ -6,6 +6,7 @@ import useAuth from "../../Hook/useAuth";
 import toast from "react-hot-toast";
 import { format, parseISO } from "date-fns";
 import Countdown from "react-countdown";
+import { Helmet } from "react-helmet-async";
 
 const TaskListDetails = () => {
   const { id } = useParams();
@@ -90,6 +91,9 @@ const TaskListDetails = () => {
 
   return (
     <div className="mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <Helmet>
+        <title>Dashboard | Details</title>
+      </Helmet>
       <div className="max-w-3xl mx-auto">
         <div className="py-8 flex justify-between items-center">
           <h1 className="text-3xl font-bold mb-2">{taskdetails?.task_title}</h1>
