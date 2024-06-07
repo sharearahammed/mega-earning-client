@@ -15,7 +15,6 @@ const ManageTasks = () => {
         queryKey: ['tasks'],
         queryFn: async () => {
           const res = await axiosSecure.get(`/tasks`)
-          console.log("------------",res.data)
           return res.data
         },
       })

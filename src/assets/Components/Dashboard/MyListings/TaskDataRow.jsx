@@ -35,7 +35,7 @@ const TaskDataRow = ({task,handleDelete,refetch}) => {
         >
           <span
             aria-hidden='true'
-            className='absolute inset-0 bg-green-200 opacity-50 rounded-full'
+            className='absolute inset-0 bg-green-200 rounded-full'
           ></span>
           <span className='relative'>Update</span>
         </button>
@@ -54,9 +54,9 @@ const TaskDataRow = ({task,handleDelete,refetch}) => {
         >
           <span
             aria-hidden='true'
-            className='absolute inset-0 bg-red-500 opacity-50 rounded-full'
+            className='absolute inset-0 bg-red-400 rounded-full'
           ></span>
-          <span className='relative text-white'>Delete</span>
+          <span className='relative text-black'>Delete</span>
         </button>
         {/* Delete modal */}
         <DeleteModal

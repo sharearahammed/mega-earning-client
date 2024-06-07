@@ -28,7 +28,6 @@ const AdminHome = () => {
         },
       })
 
-      console.log('payment length',payment.length)
       const totalPayment = payment?.length;
 
 

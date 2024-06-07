@@ -14,7 +14,6 @@ const PurchaseCoin = () => {
           return res.data
         },
       })
-      console.log(cards)
 
     return (
         <div className="pt-[90px] pb-6 p-5 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full flex flex-col justify-center items-center text-gray-800 bg-gray-50" style={{

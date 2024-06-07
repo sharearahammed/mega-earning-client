@@ -12,7 +12,6 @@ const TopEarner = () => {
   });
   // status
 
-  console.log("topearner", topearners);
 
   return (
     <section id="our-team" className=" py-32 max-w-7xl mx-auto">

@@ -39,7 +39,6 @@ const AddTask = () => {
     }
 })
 const availableCount = parseFloat(loginUser?.coins)
-console.log(availableCount)
 
   //   Form handler
   const handleSubmit = async e => {

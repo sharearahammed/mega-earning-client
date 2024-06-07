@@ -36,7 +36,6 @@ const WorkerHome = () => {
     (sum, submission) => sum + submission.payable_amount,
     0
   );
-  console.log("approvedSubmissions", approvedSubmissions);
 
   return (
     <div className="pt-[90px] px-5 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover"

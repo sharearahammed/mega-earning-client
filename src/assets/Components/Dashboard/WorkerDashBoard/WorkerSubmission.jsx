@@ -15,7 +15,6 @@ const WorkerSubmission = () => {
   const { user } = useAuth();
   
   useEffect(() => {
-    console.log('one')
     const getData = async () => {
       try {
         const { data } = await axiosSecure.get(`/submissions?page=${currentPage}&size=${itemsPerPage}&email=${user?.email}`);
@@ -31,7 +30,6 @@ const WorkerSubmission = () => {
   }, [user.email,itemsPerPage,currentPage]);
 
     useEffect(() => {
-      console.log('one')
     const getCount = async () => {
       try {
         const { data } = await axiosSecure.get(`/totalSubmissions/${user?.email}`);
@@ -44,7 +42,6 @@ const WorkerSubmission = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user.email]);
 
-  console.log("count",count)
 
   const numberOfPages = Math.ceil(count / itemsPerPage);
 

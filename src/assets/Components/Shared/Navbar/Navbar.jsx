@@ -18,7 +18,7 @@ const Navbar = () => {
           return res.data
         },
       })
-      console.log('coin',coin)
+
   const links = (
     <>
       <li className="text-gray-400 font-bold">
