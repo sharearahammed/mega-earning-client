@@ -3,7 +3,7 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="container mx-auto max-w-7xl"
+      className="container mx-auto max-w-7xl mb-20"
     >
       <div className="flex-col items-center text-center">
         <h2 className=" mb-10 font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
@@ -12,7 +12,7 @@ const Features = () => {
 
       </div>
 
-      <div className="mx-auto max-w-7xl grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+      <div className="mx-auto max-w-7xl grid justify-center gap-4 sm:grid-cols-2  md:grid-cols-3">
         <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex flex-col justify-between rounded-md p-6">
             <img className="h-20 w-20" src="https://i.ibb.co/fd7Y1QB/Earn-Coins-by-Completing-Tasks.png" alt="" />

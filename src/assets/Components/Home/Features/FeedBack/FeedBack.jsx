@@ -20,12 +20,12 @@ const FeedBack = () => {
     <section
       id="testimonials"
       aria-label="What our customers are saying"
-      className="py-20 sm:py-32 max-w-7xl mx-auto"
+      className=" max-w-7xl mx-auto mb-20"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="font-display text-3xl tracking-tight text-slate-900 sm:text-4xl mb-5">
-            What Our Customers Are Saying
+          <h2 className="mb-20 font-extrabold font-display text-5xl tracking-tight text-slate-900">
+            What Our Users Are Saying
           </h2>
         </div>
         <Swiper
