@@ -15,7 +15,7 @@ const TopEarner = () => {
   console.log("topearner", topearners);
 
   return (
-    <section id="our-team" className="bg-gray-100 py-32">
+    <section id="our-team" className=" py-32 max-w-7xl mx-auto">
       <div className="container mx-auto px-4">
         <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl mb-7">
           Top Earners

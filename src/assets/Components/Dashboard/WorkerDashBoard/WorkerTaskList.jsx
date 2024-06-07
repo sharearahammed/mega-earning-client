@@ -15,15 +15,19 @@ const WorkerTaskList = () => {
           return res.data
         },
       })
+      
 
     return (
-        <section className="relative overflow-hidden py-10">
+        <section className="pt-[90px] lg:pb-6 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover" style={{
+          backgroundImage:
+            'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+        }}>
            <Helmet>
         <title>Dashboard | Task List</title>
       </Helmet>
   <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div className="mx-auto text-center">
-      <h2 className="mt-5 font-display text-3xl tracking-tight text-slate-800 sm:text-4xl">All Tasks</h2>
+      <h2 className="mt-5 font-display text-3xl tracking-tight text-slate-800 sm:text-4xl font-bold">All Tasks</h2>
     </div>
     {/* maping */}
     <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 text-sm sm:mt-20 sm:grid-cols-2 md:gap-y-10 lg:max-w-none lg:grid-cols-2">

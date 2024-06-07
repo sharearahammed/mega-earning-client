@@ -98,10 +98,14 @@ console.log(availableCount)
     setImagePreview(URL.createObjectURL(image))
     setImageText(image.name)
   }
-
+  
 
     return (
-        <>
+        <div className="pt-[90px] pb-6 p-5 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full flex flex-col justify-center items-center text-gray-800 bg-gray-50"
+  style={{
+    backgroundImage:
+      'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+  }}>
          <Helmet>
         <title>Dashboard | Add Task</title>
       </Helmet>
@@ -114,7 +118,7 @@ console.log(availableCount)
         imageText={imageText}
         loading={loading}
          />
-        </>
+        </div>
     );
 };
 

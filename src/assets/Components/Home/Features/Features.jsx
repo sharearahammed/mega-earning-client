@@ -3,21 +3,16 @@ const Features = () => {
   return (
     <section
       id="features"
-      className="container mx-auto px-4 space-y-6 py-8 md:py-12 lg:py-20"
+      className="container mx-auto max-w-7xl"
     >
-      <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+      <div className="flex-col items-center text-center">
+        <h2 className=" mb-10 font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
           Features
         </h2> 
 
-        <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-          The product can personalize user experiences by understanding
-          individual preferences and tailoring recommendations or content based
-          on user behavior and historical data.
-        </p>
       </div>
 
-      <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
+      <div className="mx-auto max-w-7xl grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3">
         <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex flex-col justify-between rounded-md p-6">
             <img className="h-20 w-20" src="https://i.ibb.co/fd7Y1QB/Earn-Coins-by-Completing-Tasks.png" alt="" />

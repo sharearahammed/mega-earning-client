@@ -15,20 +15,20 @@ const TaskDataRow = ({task,handleDelete,refetch}) => {
     return (
         <tr>
       
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>{task?.task_title}</p>
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>{task?.task_quantity}</p>
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>${task?.payable_amount}</p>
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <p className='text-gray-900 whitespace-no-wrap'>{task?.timestamp}</p>
       </td>
       
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <button
           onClick={() => setIsEditModalOpen(true)}
           className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'
@@ -47,16 +47,16 @@ const TaskDataRow = ({task,handleDelete,refetch}) => {
           refetch={refetch}
         />
       </td>
-      <td className='px-5 py-5 border-b border-gray-200 bg-white text-sm'>
+      <td className='px-5 py-5 border-b border-gray-200  text-sm'>
         <button
           onClick={() => setIsOpen(true)}
           className='relative cursor-pointer inline-block px-3 py-1 font-semibold text-green-900 leading-tight'
         >
           <span
             aria-hidden='true'
-            className='absolute inset-0 bg-red-200 opacity-50 rounded-full'
+            className='absolute inset-0 bg-red-500 opacity-50 rounded-full'
           ></span>
-          <span className='relative'>Delete</span>
+          <span className='relative text-white'>Delete</span>
         </button>
         {/* Delete modal */}
         <DeleteModal

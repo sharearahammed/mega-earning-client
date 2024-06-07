@@ -12,7 +12,7 @@ const PurchaseCoincart = ({cart,refetch}) => {
         setIsOpen(false)
       }
     return (
-        <div className="border rounded-md p-6">
+        <div className="border rounded-md p-6 bg-white">
           <h3 className="text-2xl font-semibold mb-1">{cart?.description}</h3>
           <div className="mt-6">
             <h3 className="text-2xl font-semibold">Cost: ${cart?.price}</h3>

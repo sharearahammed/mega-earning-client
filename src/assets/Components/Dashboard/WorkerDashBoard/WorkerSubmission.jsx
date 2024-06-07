@@ -5,15 +5,17 @@ import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
 const WorkerSubmission = () => {
-  const [itemsPerPage, setItemsPerPage] = useState(5);
+  // const [itemsPerPage, setItemsPerPage] = useState(5);
+  const itemsPerPage = 5
   const [currentPage, setCurrentPage] = useState(1);
   const [count, setCount] = useState(0);
   const [workerSubs, setWorkerSubs] = useState([]);
 
   const axiosSecure = useAxiosSecure();
   const { user } = useAuth();
-
+  
   useEffect(() => {
+    console.log('one')
     const getData = async () => {
       try {
         const { data } = await axiosSecure.get(`/submissions?page=${currentPage}&size=${itemsPerPage}&email=${user?.email}`);
@@ -25,9 +27,11 @@ const WorkerSubmission = () => {
     if (user.email) {
       getData();
     }
-  }, [axiosSecure, currentPage, itemsPerPage, user.email]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.email,itemsPerPage,currentPage]);
 
     useEffect(() => {
+      console.log('one')
     const getCount = async () => {
       try {
         const { data } = await axiosSecure.get(`/totalSubmissions/${user?.email}`);
@@ -37,7 +41,8 @@ const WorkerSubmission = () => {
       }
     };
     getCount();
-  }, [axiosSecure, user.email]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user.email]);
 
   console.log("count",count)
 
@@ -49,8 +54,13 @@ const WorkerSubmission = () => {
     setCurrentPage(value)
   };
 
+
   return (
-    <div className="mt-16 overflow-x-auto w-full">
+    <div className="pt-[90px] pb-6 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full" style={{
+      backgroundImage:
+        'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+    }}
+  >
        <Helmet>
         <title>Dashboard | My Submission</title>
       </Helmet>

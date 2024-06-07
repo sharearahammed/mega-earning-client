@@ -54,9 +54,12 @@ const totalpayment = payments.reduce((total, item) => total + item.cart.price, 0
       return res.data;
     },
   });
-
+  
   return (
-    <div className="pt-[90px]">
+    <div className="pt-[90px] px-5 lg:pb-6 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover  overflow-x-auto w-full  text-gray-800 bg-gray-50" style={{
+      backgroundImage:
+        'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+    }}>
 
           <div>
             <TaskCreatorHomeStats

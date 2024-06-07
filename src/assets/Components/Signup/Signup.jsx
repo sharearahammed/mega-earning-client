@@ -99,13 +99,18 @@ const SignUp = () => {
       toast.error(err.message);
     }
   };
+  
 
   return (
-    <div className="lg:py-10 flex justify-center items-center min-h-screen">
+    <div className=" pt-16 pb-6 pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full lg:py-10 flex justify-center items-center"
+    style={{
+      backgroundImage:
+        'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+    }}>
       <div className="flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#F1FAEE] text-gray-900">
         <div className="mb-8 text-center">
           <h1 className="my-3 text-4xl font-bold">Sign Up</h1>
-          <p className="text-sm text-gray-400">Welcome to StayVista</p>
+          <p className="text-sm text-gray-400">Welcome to MegaEarning</p>
         </div>
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="space-y-4">

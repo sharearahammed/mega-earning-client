@@ -39,7 +39,11 @@ const WorkerHome = () => {
   console.log("approvedSubmissions", approvedSubmissions);
 
   return (
-    <div className="pt-[90px]">
+    <div className="pt-[90px] px-5 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover"
+    style={{
+      backgroundImage:
+        'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+    }}>
       <div>
         <WorkerStats
           userCoin={userCoin}

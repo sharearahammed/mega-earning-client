@@ -14,7 +14,7 @@ const AddNewTasks = ({
   loading,
 }) => {
   return (
-    <div className="px-5 pt-[90px] w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
+    <div className="">
       <h1 className="lg:text-2xl font-bold">Add Task</h1>
       <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-10">

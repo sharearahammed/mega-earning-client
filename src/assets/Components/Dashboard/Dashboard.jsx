@@ -19,11 +19,12 @@ const Dashboard = () => {
         }
     })
     if(loading) return <LoadingSpinner />
-
+    
   return (
       
     
-      <div className='relative min-h-screen md:flex'>
+      <div className='relative min-h-screen md:flex'
+      >
         <Helmet>
         <title>Dashboard | Home</title>
       </Helmet>
@@ -32,8 +33,8 @@ const Dashboard = () => {
       
 
       {/* Outlet --> Dynamic content */}
-      <div className='flex-1 md:ml-64'>
-        <div className='p-5'>
+      <div className='flex-1 md:pl-56'>
+        <div className='p-'>
           <Outlet />
         </div>
       </div>

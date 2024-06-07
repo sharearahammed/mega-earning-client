@@ -84,9 +84,14 @@ const WithdrawForm = () => {
       setLoading(false)
     }
   };
+ 
 
   return (
-    <div className="mt-20 w-full min-h-[calc(100vh-40px)] flex flex-col justify-center items-center text-gray-800 rounded-xl bg-gray-50">
+    <div className="pt-[90px] pb-6 p-10 lg:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full flex flex-col justify-center items-center text-gray-800 bg-gray-50"
+    style={{
+      backgroundImage:
+        'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+    }}>
        <Helmet>
         <title>Dashboard | Withdrawals</title>
       </Helmet>

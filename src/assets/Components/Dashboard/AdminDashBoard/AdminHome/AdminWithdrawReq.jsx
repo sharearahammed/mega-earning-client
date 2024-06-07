@@ -16,10 +16,10 @@ const AdminWithdrawReq = () => {
         },
       })
 
-      console.log('withdraws',withdraws)
+      // console.log('withdraws',withdraws)
 
     return (
-        <div className="">
+        <div className="md:pl-9">
             <h1 className="mb-5 text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">Withdraw request</h1>
             <div className="overflow-x-auto">
             <table className="table">

@@ -46,14 +46,21 @@ const MyListings = () => {
     }
   };
   if (isLoading) return <LoadingSpinner />;
+
   return (
     <>
       <Helmet>
         <title>Dashboard | My Listings</title>
       </Helmet>
 
-      <div className="container mx-auto px-4 sm:px-8">
-        <div className="py-8">
+      <div className="container mx-auto px-4 sm:px-8"   style={{
+    backgroundImage:
+      'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+  }}>
+        <div className="py-8 pt-20"  style={{
+    backgroundImage:
+      'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
+  }}>
           <div className="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
             <div className="inline-block min-w-full shadow rounded-lg overflow-hidden">
               <table className="min-w-full leading-normal">
@@ -61,39 +68,39 @@ const MyListings = () => {
                   <tr>
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Task Title
                     </th>
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Task Count
                     </th>
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Payable Amount
                     </th>
 
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Time
                     </th>
 
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Update
                     </th>
                     <th
                       scope="col"
-                      className="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
+                      className="px-5 py-3   border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal"
                     >
                       Delete
                     </th>

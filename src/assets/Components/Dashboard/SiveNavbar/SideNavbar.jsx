@@ -7,7 +7,7 @@ import { useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import { IoNotifications } from "react-icons/io5";
 import { FaClipboardList, FaThList } from "react-icons/fa";
-import { PiCoins } from "react-icons/pi";
+import { PiCoins, PiHandWithdrawBold } from "react-icons/pi";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
@@ -38,11 +38,9 @@ const SideNavbar = ({ loginUser }) => {
   return (
     <div>
       {/* Small Screen Navbar */}
-      <div className="fixed z-10 bg-gray-100 text-gray-800 flex justify-between w-full">
+      <div className="fixed z-10 text-gray-800 flex justify-between w-full">
         <div>
-          <div className="items-center block cursor-pointer p-4 font-bold text-[10px] lg:text-2xl bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
-            <Link to="/">MEGAEARNING</Link>
-          </div>
+          
         </div>
         <div className="flex justify-center items-center lg:mr-10">
           <div>
@@ -93,7 +91,7 @@ const SideNavbar = ({ loginUser }) => {
 
       {/* Sidebar */}
       <div
-        className={`z-10 mt-[50px] lg:mt-14  md:fixed flex flex-col justify-between overflow-x-hidden bg-gray-100 w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
+        className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-[#D7FFDD] w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && "-translate-x-full"
         }  md:translate-x-0  transition duration-700 ease-in-out`}
       >
@@ -101,7 +99,11 @@ const SideNavbar = ({ loginUser }) => {
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             {/* Conditional toggle button here.. */}
-
+            <div>
+            <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent font-extrabold mx-auto">
+            <Link to="/">MEGAEARNING</Link>
+          </div>
+            </div>
             <nav>
               {loginUser.role === "Admin" ? (
                 <>
@@ -214,7 +216,7 @@ const SideNavbar = ({ loginUser }) => {
                       }`
                     }
                   >
-                    <FaClipboardList className="w-5 h-5" />
+                    <PiHandWithdrawBold className="w-5 h-5" />
 
                     <span className="mx-4 font-medium">Withdrawals</span>
                   </NavLink>
