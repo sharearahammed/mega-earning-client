@@ -23,7 +23,7 @@ const SideNavbar = ({ loginUser }) => {
   const closeModal = () => {
     setIsOpen(false);
   };
-  const { data: notifications = [], refetch } = useQuery({
+  const { data: notifications = [] } = useQuery({
     queryKey: ["notifications"],
     queryFn: async () => {
       const res = await axiosSecure.get(`/notifications?toEmail=${user.email}`);
