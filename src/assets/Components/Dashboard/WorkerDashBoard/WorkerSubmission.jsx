@@ -83,7 +83,7 @@ const WorkerSubmission = () => {
           {workerSubs?.filter(m => m.worker_email == user?.email).map((workerSub, idx) => (
             <WorkerSubmissionTable
               key={workerSub._id}
-              idx={idx}
+              idx={(currentPage - 1) * itemsPerPage + idx } 
               workerSub={workerSub}
             />
           ))}

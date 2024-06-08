@@ -24,8 +24,8 @@ const Footer = () => {
         </div>
         <div className="p-5">
             <div className="text-sm uppercase text-[#22AB59] font-bold">Contact us</div>
-            <a className="my-3 block" href="/#">XXX XXXX, Floor 4 San Francisco, CA
-                <span className="text-teal-600 text-xs p-1"></span></a><a className="my-3 block" href="/#">contact@company.com
+            <a className="my-3 block" href="/#">Dhaka Gazipur, 1701 BARI Rd Joydebpur
+                <span className="text-teal-600 text-xs p-1"></span></a><a className="my-3 block" href="/#">megaearning@gmail.com
                 <span className="text-teal-600 text-xs p-1"></span></a>
         </div>
     </div>
