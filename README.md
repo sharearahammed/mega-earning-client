@@ -2,7 +2,7 @@
 
 Welcome to My MegaEarning Website!
 
-### Admin Username: sharearahammed@gmail.com### Password: Nihal@12
+### Admin Username: sharearahammed@gmail.com
 ### Password: Nihal@12
 
 
@@ -10,7 +10,7 @@ Welcome to My MegaEarning Website!
 
 You can visit the live site [here](https://mega-earning.netlify.app).
 
-### The Micro-Task and Earning Platform is a responsive, secure web application designed for crowdsourcing tasks, where users complete micro-tasks to earn rewards. It supports Workers, Task-Creators, and Admins, each with specific functionalities. Workers can view tasks, submit completions, and withdraw earnings, while Task-Creators manage tasks and payments. Admins oversee operations and handle financial transactions. The platform features secure authentication, real-time notifications, and Stripe integration for purchases, offering an intuitive and efficient user experience.
+The Micro-Task and Earning Platform is a responsive, secure web application designed for crowdsourcing tasks, where users complete micro-tasks to earn rewards. It supports Workers, Task-Creators, and Admins, each with specific functionalities. Workers can view tasks, submit completions, and withdraw earnings, while Task-Creators manage tasks and payments. Admins oversee operations and handle financial transactions. The platform features secure authentication, real-time notifications, and Stripe integration for purchases, offering an intuitive and efficient user experience.
 
 # Features and Characteristics
 
