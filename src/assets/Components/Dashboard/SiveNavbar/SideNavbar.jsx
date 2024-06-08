@@ -6,7 +6,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import { IoNotifications } from "react-icons/io5";
-import { FaClipboardList, FaThList } from "react-icons/fa";
+import { FaClipboardList, FaCoins, FaThList } from "react-icons/fa";
 import { PiCoins, PiHandWithdrawBold } from "react-icons/pi";
 import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
@@ -38,32 +38,25 @@ const SideNavbar = ({ loginUser }) => {
   return (
     <div>
       {/* Small Screen Navbar */}
-      <div className="fixed z-10 text-gray-800 flex justify-between w-full">
-        <div>
-          
-        </div>
+      <div className="pt-5 fixed z-10 text-gray-800 flex justify-end w-full">
+        
         <div className="flex justify-center items-center lg:mr-10">
           <div>
             {loginUser && (
               <div className="flex  flex-col">
-                <div className="flex  items-center lg:gap-5">
-                  <h1 className="text-[10px]">
-                    Available coin: {loginUser.coins}
-                  </h1>
+                <div className="flex  items-center gap-4 lg:gap-6">
+                  <div className="text-[10px] lg:text-[20px] flex items-center gap-2">
+                    <div><FaCoins /></div>
+                    <div>{loginUser.coins}</div>
+                  </div>
+                  <div className="rounded-full">
                   <img
-                    className="lg:h-10 h-7 rounded-full"
+                    className="lg:h-10 lg:w-10 h-7 w-7 border border-gray-400 rounded-full "
                     src={loginUser.image}
                     alt=""
                   />
-                </div>
-                <div className="flex  items-center gap-5">
-                  <h1 className="text-[10px]">{loginUser.role}</h1> |
-                  <h1 className="text-[10px]">{loginUser.name}</h1>
-                </div>
-              </div>
-            )}
-          </div>
-          <div>
+                  </div>
+                  <div className="pl-6">
             <button className="lg:relative flex items-center justify-center">
               <div onClick={() => setIsOpen(true)}>
                 <IoNotifications
@@ -76,8 +69,17 @@ const SideNavbar = ({ loginUser }) => {
                     isOpen={isOpen}
                     closeModal={closeModal}
                   />
-              <div className="text-[10px] lg:absolute -top-3 -right-4">+{notifications.length}</div>
+              <div className="text-[10px] lg:text-[20px] lg:absolute -top-3 -right-4">+{notifications.length}</div>
             </button>
+          </div>
+                </div>
+                
+                <div className="text-[10px] lg:text-[20px] flex pt-2 items-center gap-5">
+                  <h1 className="">{loginUser.role}</h1> |
+                  <h1 className="">{loginUser.name}</h1>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -93,15 +95,16 @@ const SideNavbar = ({ loginUser }) => {
       <div
         className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-[#D7FFDD] w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && "-translate-x-full"
-        }  md:translate-x-0  transition duration-700 ease-in-out`}
+        }  md:translate-x-0  transition duration-700 ease-in-out
+        bg-gradient-to-r from-gray-100 to-green-500`}
       >
         <div>
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             {/* Conditional toggle button here.. */}
             <div>
-            <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent font-extrabold mx-auto">
-            <Link to="/">MEGAEARNING</Link>
+            <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gradient-to-r from-[#17a450] to-black bg-clip-text text-transparent font-extrabold mx-auto">
+            <Link to="/"><p className="text-xl">MEGAEARNING</p></Link>
           </div>
             </div>
             <nav>
@@ -112,10 +115,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="admin-home"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -127,10 +130,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="manage-users"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -142,10 +145,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="manage-tasks"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -164,10 +167,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="worker-home"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -179,10 +182,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="worker-tasklist"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -194,10 +197,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="worker-submission"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -209,10 +212,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="withdrawForm"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -231,10 +234,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="taskCreator-home"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -246,10 +249,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="addNewTask"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -261,10 +264,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="my-listings"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -276,10 +279,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="purchase-coin"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -291,10 +294,10 @@ const SideNavbar = ({ loginUser }) => {
                     to="payment-history"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-300   hover:text-gray-700 ${
+                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
-                          ? "bg-gray-300  text-gray-700"
-                          : "text-gray-600"
+                          ? "bg-gray-200 rounded-lg  text-gray-700"
+                          : "text-black"
                       }`
                     }
                   >
@@ -316,7 +319,7 @@ const SideNavbar = ({ loginUser }) => {
           <Link to={"/login"}>
             <button
               onClick={logOut}
-              className="flex w-full items-center px-4 py-2 mt-5 text-gray-600 hover:bg-gray-300   hover:text-gray-700 transition-colors duration-300 transform"
+              className="flex w-full items-center px-4 py-2 mt-5 text-black hover:bg-gray-200 rounded-lg   hover:text-gray-700 transition-colors duration-300 transform"
             >
               <GrLogout className="w-5 h-5" />
 

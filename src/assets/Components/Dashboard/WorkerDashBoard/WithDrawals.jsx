@@ -100,7 +100,7 @@ const WithdrawForm = () => {
       <h1 className="text-2xl font-bold">Conversion Rate: 20 Coins = 1 Dollar</h1>
       </div>
       <div className='text-xl'>
-      <h1>Your Maximum Withdrawal Amount: <span className="font-bold text-[#22AB59] text-3xl">${maxWithdrawableAmount}</span></h1>
+      <h1>Your Maximum Withdrawal Amount: <span className="font-bold text-black text-3xl">${maxWithdrawableAmount}</span></h1>
       </div>
       </div>
       
