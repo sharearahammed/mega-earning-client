@@ -2,6 +2,10 @@
 
 Welcome to My MegaEarning Website!
 
+### Admin Username: sharearahammed@gmail.com### Password: Nihal@12
+### Password: Nihal@12
+
+
 ## Live Site
 
 You can visit the live site [here](https://mega-earning.netlify.app).
