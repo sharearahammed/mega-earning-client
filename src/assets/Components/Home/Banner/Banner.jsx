@@ -28,7 +28,7 @@ const Banner = () => {
           </div>
         </div>
         <div
-          className="mt-[57px] lg:mt-[82px] hero min-h-screen rounded-none bg-no-repeat bg-cover"
+          className="mt-[65px] lg:mt-[85px] hero lg:min-h-screen lg:bg-no-repeat lg:bg-cover h-[400px]"
           style={{
             backgroundImage:
               'url("https://i.ibb.co/CnhWCBt/flexible.png")',
@@ -49,7 +49,7 @@ const Banner = () => {
           </div>
         </div>
         <div
-          className="mt-[57px] lg:mt-[82px] hero min-h-screen rounded-none bg-no-repeat bg-cover"
+          className="mt-[65px] lg:mt-[85px] hero lg:min-h-screen lg:bg-no-repeat lg:bg-cover h-[400px]"
           style={{
             backgroundImage:
               'url("https://i.ibb.co/jrjPTx7/success.jpg")',
