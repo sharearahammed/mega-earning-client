@@ -1,14 +1,15 @@
 import { AiFillGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import './Footer.css'
 
 const Footer = () => {
     return (
-        <section className="pt-10 bg-gray-100">
+        <div className="footer-bg h-full pt-10 bg-gray-100 bg-fixed bg-cover bg-no-repeat bg-center">
             <div className="">
     <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         
         <div className="p-5 text-xl font-extrabold bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
-              <Link to={"/"}>MEGAEARNING</Link>
+              <Link to={"/"}><span className="text-black">Mega</span>Earning</Link>
             </div>
         <div className="p-5">
             <div className="text-sm uppercase text-[#22AB59] font-bold">Resources</div>
@@ -31,7 +32,7 @@ const Footer = () => {
     </div>
 </div>
 
-<div className="bg-gray-100 pt-2">
+<div className="footer-bg h-full bg-gray-100 bg-fixed bg-cover bg-no-repeat bg-center pt-2">
     <div className="flex pb-5 px-3 m-auto pt-5 border-t text-gray-800 text-sm flex-col
       max-w-screen-lg items-center">
         <div className="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
@@ -100,7 +101,7 @@ const Footer = () => {
     </div>
 </div>
 
-        </section>
+        </div>
     );
 };
 

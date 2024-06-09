@@ -13,7 +13,7 @@ const Features = () => {
       </div>
 
       <div className="mx-auto max-w-7xl grid justify-center gap-4 sm:grid-cols-2  md:grid-cols-3">
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex flex-col justify-between rounded-md p-6">
             <img className="h-20 w-20" src="https://i.ibb.co/fd7Y1QB/Earn-Coins-by-Completing-Tasks.png" alt="" />
             <div className="space-y-2">
@@ -25,7 +25,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex  flex-col justify-between rounded-md p-6">
           <img className="h-20 w-20" src="https://i.ibb.co/NZ72HWs/Create-and-Manage-Tasks.png" alt="" />
             <div className="space-y-2">
@@ -35,7 +35,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex  flex-col justify-between rounded-md p-6">
           <img className="h-20 w-20" src="https://i.ibb.co/Fbkp4Zq/Secure-Payments.png" alt="" />
             <div className="space-y-2">
@@ -47,7 +47,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex  flex-col justify-between rounded-md p-6">
           <img className="h-20 w-20" src="https://i.ibb.co/pdJGRWf/Community-Support.jpg" alt="" />
             <div className="space-y-2">
@@ -59,7 +59,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex  flex-col justify-between rounded-md p-6">
           <img className="h-20 w-20" src="https://i.ibb.co/HHPMhS4/Task-Variety1.png" alt="" />
             
@@ -72,7 +72,7 @@ const Features = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden rounded-lg border bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
+        <div data-aos="flip-left" data-aos-duration="2000" className="relative overflow-hidden rounded-lg border border-black hover:border-white bg-white select-none hover:shadow hover:shadow-[#22AB59] p-2">
           <div className="flex  flex-col justify-between rounded-md p-6">
           <img className="h-20 w-20" src="https://i.ibb.co/DrbdB0S/Referral-Program.png" alt="" />
             <div className="space-y-2">

@@ -9,7 +9,7 @@ const AdminManageUsers = () => {
     const {
         data: userss = [],refetch,isLoading
       } = useQuery({
-        queryKey: ['userCoin'],
+        queryKey: ['userss'],
         queryFn: async () => {
           const res = await axiosSecure.get(`/users`)
           return res.data
@@ -45,11 +45,13 @@ const AdminManageUsers = () => {
               </thead>
               <tbody>
                 {
-                  userss && userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
+                  userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
                   key={user._id}
                   user={user}
                   refetch={refetch}
-                   />) : "Please Reload the Page Again"
+                   />) : <div>
+                    <h1 className="text-2xl font-bold">Please Reload the Page Again</h1>
+                   </div>
                 }
               </tbody>
             </table>

@@ -102,7 +102,8 @@ const SignUp = () => {
   
 
   return (
-    <div className=" pt-16 pb-6 pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full lg:py-10 flex justify-center items-center"
+    <div className="pt-[57px] lg:pt-[82px]">
+      <div className=" pt-16 pb-6 pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full lg:py-10 flex justify-center items-center"
     style={{
       backgroundImage:
         'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
@@ -224,6 +225,7 @@ const SignUp = () => {
           .
         </p>
       </div>
+    </div>
     </div>
   );
 };

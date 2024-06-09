@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const WorkerTaskListCard = ({task}) => {
   const date = task?.date ? parseISO(task.date) : null;
     return (
-      <div className="bg-white rounded-lg">
+      <div className="bg-white rounded-lg bg-opacity-70">
         {
             task && task?.task_quantity > 0 ? <>
             <li className="rounded-2xl border border-gray-200 p-8">
@@ -35,4 +35,6 @@ const WorkerTaskListCard = ({task}) => {
 };
 
 export default WorkerTaskListCard;
+
+
 

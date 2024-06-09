@@ -23,7 +23,7 @@ const PurchaseCoin = () => {
            <Helmet>
         <title>Dashboard | Purchare Coin</title>
       </Helmet>
-            <div className="grid lg:grid-cols-2 sm:grid-cols-2 gap-8 mt-12 max-sm:max-w-sm max-sm:mx-auto">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-2 gap-8 mt-12 max-sm:max-w-sm max-sm:mx-auto">
             {
                 cards && cards?.map(cart=><PurchaseCoinCard key={cart._id} cart={cart} refetch={refetch}/>)
             }

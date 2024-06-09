@@ -58,13 +58,14 @@ const Login = () => {
  
 
   return (
-    <div className='rounded-none bg-no-repeat bg-cover pt-16 pb-10 overflow-x-auto w-full flex flex-col justify-center items-center text-gray-800 bg-gray-50'
+    <div className='pt-[57px] lg:pt-[82px]'>
+      <div className='rounded-none bg-no-repeat bg-cover pt-16 pb-10 overflow-x-auto w-full flex flex-col justify-center items-center text-gray-800 bg-gray-50'
     style={{
       backgroundImage:
         'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
     }}
     >
-      <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#F1FAEE] text-gray-900'>
+      <div className=' flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-[#F1FAEE] text-gray-900'>
         <div className='mb-8 text-center'>
           <h1 className='my-3 text-4xl font-bold'>Log In</h1>
           <p className='text-sm text-gray-400'>
@@ -160,6 +161,7 @@ const Login = () => {
           .
         </p>
       </div>
+    </div>
     </div>
   )
 }

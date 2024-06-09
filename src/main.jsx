@@ -10,6 +10,9 @@ import {
 import { HelmetProvider } from 'react-helmet-async';
 import AuthProvider from "./Providers/AuthProvider.jsx";
 import { Toaster } from 'react-hot-toast'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 const queryClient = new QueryClient()

@@ -96,15 +96,19 @@ const SideNavbar = ({ loginUser }) => {
         className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-[#D7FFDD] w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
           isActive && "-translate-x-full"
         }  md:translate-x-0  transition duration-700 ease-in-out
-        bg-gradient-to-r from-gray-100 to-green-500`}
+        bg-gradient-to-r from-gray-300 to-green-500`}
       >
         <div>
           {/* Nav Items */}
           <div className="flex flex-col justify-between flex-1 mt-6">
             {/* Conditional toggle button here.. */}
             <div>
-            <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center bg-gradient-to-r from-[#17a450] to-black bg-clip-text text-transparent font-extrabold mx-auto">
-            <Link to="/"><p className="text-xl">MEGAEARNING</p></Link>
+            <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto">
+            <Link to={"/"} className="">
+            <div className=" flex lg:text-2xl font-extrabold">
+              <h1>Mega<span className="bg-gradient-to-r from-[#256f43] to-[#175832] bg-clip-text text-transparent">Earning</span></h1>
+            </div>
+            </Link>
           </div>
             </div>
             <nav>

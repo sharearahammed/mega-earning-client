@@ -25,7 +25,7 @@ const Navbar = () => {
         <NavLink
           className={({ isActive, isPending }) =>
             isActive
-              ? "text-[#22AB59] font-bold rounded-lg"
+              ? "text-[#22AB59] font-bold rounded-full"
               : isPending
               ? "pending"
               : ""
@@ -41,7 +41,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#22AB59] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-full"
                   : isPending
                   ? "pending"
                   : ""
@@ -55,7 +55,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#22AB59] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-full"
                   : isPending
                   ? "pending"
                   : ""
@@ -69,7 +69,7 @@ const Navbar = () => {
             <NavLink
               className={({ isActive, isPending }) =>
                 isActive
-                  ? "text-[#22AB59] font-bold  rounded-lg"
+                  ? "text-[#22AB59] font-bold  rounded-full"
                   : isPending
                   ? "pending"
                   : ""
@@ -84,14 +84,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="relative bg-white shadow ">
+    <div className="fixed bg-transparent shadow shadow-green-400 flex-no-wrap z-10 w-full">
       <div className="container px-6 py-4 mx-auto">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <Link to={"/"} className="">
-            <div className=" flex lg:text-2xl font-extrabold bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
-              
-              <div className=""><img className="lg:h-[65px] h-[35px]" src="./MEGAEARNING.svg" alt="" /></div>
+            <div className="hover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex lg:text-2xl font-extrabold">
+              <h1>Mega<span className="bg-gradient-to-r from-[#099340] to-[#2ad471] bg-clip-text text-transparent">Earning</span></h1>
             </div>
             </Link>
 
@@ -217,7 +216,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </nav>
+    </div>
   );
 };
 
