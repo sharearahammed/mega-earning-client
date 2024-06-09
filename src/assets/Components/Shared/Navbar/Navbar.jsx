@@ -84,12 +84,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="fixed bg-transparent shadow shadow-green-400 flex-no-wrap z-10 w-full">
+    <div className="fixed bg-transparent flex-no-wrap z-10 w-full">
       <div className="container px-6 py-4 mx-auto">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <Link to={"/"} className="">
-            <div className="hover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex lg:text-2xl font-extrabold">
+            <div className="chover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex justify-center items-center gap-1 lg:text-2xl font-extrabold">
+              <img className="h-9 lg:h-14" src="https://i.ibb.co/8gb8fQc/4136942.jpg" alt="" />
               <h1>Mega<span className="bg-gradient-to-r from-[#099340] to-[#2ad471] bg-clip-text text-transparent">Earning</span></h1>
             </div>
             </Link>
