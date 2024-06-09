@@ -11,7 +11,7 @@ const AdminStates = ({payment,user,totalCoin}) => {
         <h2 className="text-3xl font-extrabold tracking-tight pb-10 text-gray-900 sm:text-4xl dark:text-white">
           States
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:grid-cols-4 mt-4">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-12 sm:grid-cols-4 mt-4">
           <div className="bg-white shadow-black shadow-sm rounded-lg dark:bg-gray-900">
             <div className="px-4 py-5 sm:p-6">
               <dl>

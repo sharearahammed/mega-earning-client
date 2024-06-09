@@ -38,11 +38,13 @@ const AdminHome = () => {
             'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
         }}>
             <div className="">
+            <div className='flex'>
             <AdminStates
             user={totalUser}
             totalCoin={totalCoin}
             payment={totalPayment}
               />
+            </div>
             <div className='mt-10'>
             <AdminWithdrawReq />
             </div>

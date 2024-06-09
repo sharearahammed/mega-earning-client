@@ -7,7 +7,7 @@ const Banner = () => {
     <div className="text-white rounded-lg">
       <Carousel>
         <div
-          className="mt-[65px] lg:mt-[85px] hero min-h-screen bg-no-repeat bg-cover"
+          className="mt-[65px] lg:mt-[85px] hero lg:min-h-screen lg:bg-no-repeat lg:bg-cover h-[400px]"
           style={{
             backgroundImage:
               'url("https://i.ibb.co/QPpXp1C/earn-money01.jpg")',

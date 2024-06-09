@@ -10,7 +10,7 @@ const WorkerStats = ({ userCoin, submissions, totalPayableAmount }) => {
         <h2 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white">
           States
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-5 gap-10 sm:grid-cols-3 mt-10">
+        <div className="grid grid-cols-2 lg:grid-cols-3 lg:gap-5 gap-10 sm:grid-cols-3 mt-10">
           <div className="bg-white shadow-black shadow-sm rounded-lg dark:bg-gray-900">
             <div className="px-4 py-5 sm:p-6">
               <dl>
