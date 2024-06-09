@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="flex items-center justify-between">
             <Link to={"/"} className="">
             <div className="chover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex justify-center items-center gap-1 lg:text-2xl font-extrabold">
-              <img className="h-9 lg:h-14" src="https://i.ibb.co/8gb8fQc/4136942.jpg" alt="" />
+              <img className="h-9 lg:h-14" src="https://i.ibb.co/hCm3GC9/4136942-removebg-preview.png" alt="" />
               <h1>Mega<span className="bg-gradient-to-r from-[#099340] to-[#2ad471] bg-clip-text text-transparent">Earning</span></h1>
             </div>
             </Link>

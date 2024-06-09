@@ -9,7 +9,12 @@ const Footer = () => {
     <div className="max-w-screen-lg px-4 sm:px-6 text-gray-800 sm:grid md:grid-cols-4 sm:grid-cols-2 mx-auto">
         
         <div className="p-5 text-xl font-extrabold bg-gradient-to-r from-[#17a450] to-[#22AB59] bg-clip-text text-transparent">
-              <Link to={"/"}><span className="text-black">Mega</span>Earning</Link>
+              <Link to={"/"}>
+              <div className="flex justify-center items-center gap-2">
+              <img className="h-9 lg:h-12" src="https://i.ibb.co/hCm3GC9/4136942-removebg-preview.png" alt="" />
+              <h1><span className="text-black">Mega</span>Earning</h1>
+              </div>
+              </Link>
             </div>
         <div className="p-5">
             <div className="text-sm uppercase text-[#22AB59] font-bold">Resources</div>

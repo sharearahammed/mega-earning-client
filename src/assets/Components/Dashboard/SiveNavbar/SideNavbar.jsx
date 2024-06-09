@@ -105,7 +105,8 @@ const SideNavbar = ({ loginUser }) => {
             <div>
             <div className=" w-full md:flex px-4 py-2 shadow-lg rounded-lg justify-center items-center mx-auto">
             <Link to={"/"} className="">
-            <div className=" flex lg:text-2xl font-extrabold">
+            <div className=" flex justify-center items-center gap-2 lg:text-2xl font-extrabold">
+            <img className="h-9 lg:h-10" src="https://i.ibb.co/hCm3GC9/4136942-removebg-preview.png" alt="" />
               <h1>Mega<span className="bg-gradient-to-r from-[#256f43] to-[#175832] bg-clip-text text-transparent">Earning</span></h1>
             </div>
             </Link>
