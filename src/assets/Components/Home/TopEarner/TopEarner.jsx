@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosCommon from "../../Hook/useAxiosCommon";
+import SectionTitle from "../../Hook/SectionTitle";
 
 const TopEarner = () => {
   const axiosPublic = useAxiosCommon();
@@ -16,9 +17,10 @@ const TopEarner = () => {
   return (
     <div id="our-team" className=" py-32 max-w-7xl mx-auto">
       <div className="container mx-auto px-4">
-        <h2 className="font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl mb-7">
-          Top Earners
-        </h2>
+        <SectionTitle
+        subHeading="Celebrating Our Highest Achievers"
+        heading="Top Earners"
+        ></SectionTitle>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {topearners?.map((topearner) => (

@@ -1,14 +1,18 @@
+import SectionTitle from "../../Hook/SectionTitle";
+
 /* eslint-disable react/no-unescaped-entities */
 const Features = () => {
   return (
-    <section
+    <div
       id="features"
       className="container mx-auto max-w-7xl mb-20"
     >
       <div className="flex-col items-center text-center">
-        <h2 className=" mb-10 font-bold text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
-          Features
-        </h2> 
+        <SectionTitle 
+        subHeading="Features that Make Earning Easy"
+        heading="Features"
+        >
+        </SectionTitle>
 
       </div>
 
@@ -84,7 +88,7 @@ const Features = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

@@ -4,6 +4,7 @@ import "swiper/css";
 import "swiper/css/effect-cards";
 import { Pagination } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
+import SectionTitle from "../../../Hook/SectionTitle";
 
 const FeedBack = () => {
   const axiosCommon = useAxiosCommon();
@@ -22,11 +23,12 @@ const FeedBack = () => {
       aria-label="What our customers are saying"
       className=" max-w-7xl mx-auto mb-20"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl md:text-center">
-          <h2 className="mb-20 font-extrabold font-display text-5xl tracking-tight text-slate-900">
-            What Our Users Are Saying
-          </h2>
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="md:text-center">
+        <SectionTitle
+        subHeading="Our Users"
+        heading="Testimonials"
+        ></SectionTitle>
         </div>
         <Swiper
           breakpoints={{
