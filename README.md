@@ -21,7 +21,8 @@ The Micro-Task and Earning Platform is a responsive, secure web application desi
 - Earnings and Withdrawals: Workers earn coins by completing tasks and can withdraw their earnings in real money using multiple payment systems like Bkash, Rocket, and Nagad.
 - Notification System: Users receive notifications for various activities, including task approvals, rejections, and payment updates.
 - Admin Dashboard: Admins can manage users, oversee tasks, and handle withdrawal requests to ensure smooth platform operations.
-- Stripe Integration: Task-Creators can purchase coins through a secure, integrated Stripe payment system.
+- Payment Integration: Task-Creators can purchase coins through a secure, integrated Stripe payment system.
+- Automated Email Notifications: When a user new signup a account, they will receive an automated email notification confirming their Signup.Also when the worker's task is approved and rejected, the email will go to the worker's email.
 - User-Friendly Dashboard: Each user role has a customized dashboard to efficiently manage their tasks, earnings, and other activities.
 - Real-Time Updates: The platform provides real-time updates on task statuses, earnings, and notifications to keep users informed at all times.
 
