@@ -12,13 +12,13 @@ const ManageTasks = () => {
     const {
         data: tasks = [],refetch
       } = useQuery({
-        queryKey: ['tasks'],
+        queryKey: ['alltasks'],
         queryFn: async () => {
           const res = await axiosSecure.get(`/taskss`)
-          return res.data
+          return res.data.result
         },
       })
-      
+      console.log("tasks",tasks)
     return (
         <div className='pt-[90px] pb-6 p-5 lg:pl-14 md:pl-14 min-h-screen rounded-none bg-no-repeat bg-cover overflow-x-auto w-full flex flex-col text-gray-800 bg-gray-50' style={{
           backgroundImage:
@@ -45,7 +45,7 @@ const ManageTasks = () => {
     </thead>
     <tbody>
       {
-        tasks && tasks?.map((task,idx)=>
+        tasks?.map((task,idx)=>
             <ManageTaskTable key={task._id}
             refetch={refetch}
             idx={idx}

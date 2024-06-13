@@ -2,7 +2,7 @@ import useAxiosCommon from "../../../Hook/useAxiosCommon";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-cards";
-import { Pagination } from "swiper/modules";
+import { Autoplay,Pagination } from "swiper/modules";
 import { useQuery } from "@tanstack/react-query";
 import SectionTitle from "../../../Hook/SectionTitle";
 
@@ -48,7 +48,11 @@ const FeedBack = () => {
           pagination={{
             clickable: true,
           }}
-          modules={[Pagination]}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay,Pagination]}
           className="mySwiper"
         >
           <ul
