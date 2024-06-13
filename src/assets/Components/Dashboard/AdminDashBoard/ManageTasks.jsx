@@ -14,7 +14,7 @@ const ManageTasks = () => {
       } = useQuery({
         queryKey: ['tasks'],
         queryFn: async () => {
-          const res = await axiosSecure.get(`/tasks`)
+          const res = await axiosSecure.get(`/taskss`)
           return res.data
         },
       })
