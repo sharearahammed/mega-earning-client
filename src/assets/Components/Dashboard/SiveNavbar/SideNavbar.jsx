@@ -13,10 +13,9 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import NotificationModal from "./NotificationModal";
 
-const SideNavbar = ({ loginUser }) => {
+const SideNavbar = ({ isActive,setActive, loginUser }) => {
   const { user, logOut } = useAuth();
   const axiosSecure = useAxiosSecure();
-  const [isActive, setActive] = useState(false);
 
   // for notification
   const [isOpen, setIsOpen] = useState(false);
@@ -31,10 +30,6 @@ const SideNavbar = ({ loginUser }) => {
     },
   });
 
-  // Sidebar Responsive Handler
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
   return (
     <div>
       {/* Small Screen Navbar */}
@@ -84,8 +79,8 @@ const SideNavbar = ({ loginUser }) => {
         </div>
 
         <button
-          onClick={handleToggle}
-          className="lg:hidden mobile-menu-button p-4 focus:outline-none focus:bg-gray-200"
+          onClick={() => setActive(!isActive)}
+          className="lg:hidden mobile-menu-button p-2 lg:p-4 focus:outline-none focus:bg-gray-200"
         >
           <AiOutlineBars className="h-5 w-5" />
         </button>
@@ -94,7 +89,7 @@ const SideNavbar = ({ loginUser }) => {
       {/* Sidebar */}
       <div
         className={`z-10 md:fixed flex flex-col justify-between overflow-x-hidden bg-[#D7FFDD] w-64 space-y-6 px-2 py-4 absolute inset-y-0 left-0 transform ${
-          isActive && "-translate-x-full"
+          !isActive && "-translate-x-full"
         }  md:translate-x-0  transition duration-700 ease-in-out
         bg-gradient-to-r from-gray-300 to-green-500`}
       >

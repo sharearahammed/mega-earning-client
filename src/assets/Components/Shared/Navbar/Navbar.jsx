@@ -1,14 +1,13 @@
-import { useState } from "react";
+/* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom";
 import useAuth from "../../Hook/useAuth";
 import { FaCoins } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 
-const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = ({isOpen,setIsOpen}) => {
   const { user, logOut } = useAuth();
-  const axiosSecure = useAxiosSecure()
+  const axiosSecure = useAxiosSecure();
     const {
         data: coin = [""]
       } = useQuery({
@@ -198,16 +197,16 @@ const Navbar = () => {
             ) : (
               <div className="flex gap-2 items-center mt-4 lg:mt-0">
                 <Link to={"/login"}>
-                  <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
+                  <button className="bg-[#22AB59] text-white px-3 p-1 lg:px-7 lg:py-2 rounded-3xl">
                     Login
                   </button>
                 </Link>
                 <Link to={"/signUp"}>
-                  <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
+                  <button className="bg-[#22AB59] text-white px-3 p-1 lg:px-7 lg:py-2 rounded-3xl">
                     Register
                   </button>
                 </Link>
-                <button className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl">
+                <button className="bg-[#22AB59] text-white px-3 p-1 lg:px-7 lg:py-2 rounded-3xl">
                   <a href="https://www.youtube.com/watch?v=aF5wEhVh2ZY">
                     WatchDemo
                   </a>

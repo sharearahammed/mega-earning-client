@@ -5,12 +5,17 @@ import useAuth from "../Hook/useAuth";
 import { Outlet } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import LoadingSpinner from "../Shareds/Shared";
+import { useState } from "react";
 
 
 
 const Dashboard = () => {
     const {user,loading} = useAuth()
     const axiosSecure = useAxiosSecure();
+    const [isActive, setActive] = useState(false);
+    const closeSidebar = () => {
+      setActive(false);
+    };
     const { data : loginUser = [] } = useQuery({
         queryKey: ['user'],
         queryFn: async()=>{
@@ -29,14 +34,12 @@ const Dashboard = () => {
         <title>Dashboard | Home</title>
       </Helmet>
       {/* Sidebar */}
-      <SideNavbar loginUser={loginUser} />
+      <SideNavbar isActive={isActive} setActive={setActive} loginUser={loginUser} />
       
 
       {/* Outlet --> Dynamic content */}
-      <div className='flex-1 md:pl-56'>
-        <div className='p-'>
+      <div onClick={closeSidebar} className='flex-1 md:pl-56'>
           <Outlet />
-        </div>
       </div>
     </div>
       
