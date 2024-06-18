@@ -28,14 +28,14 @@ const AdminManageUsers = () => {
       </Helmet>
           <div className="md:pl-10">
           <div className="overflow-x-auto">
-            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white mb-3">All Workers:</h1>
+            <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl dark:text-white mb-3">All Users:</h1>
             <table className="table">
               {/* head */}
               <thead>
                 <tr>
                   <th></th>
-                  <th>Worker Name </th>
-                  <th>Worker Email</th>
+                  <th>User Name </th>
+                  <th>User Email</th>
                   <th>Photo</th>
                   <th>Role</th>
                   <th>Coin</th>
@@ -45,13 +45,11 @@ const AdminManageUsers = () => {
               </thead>
               <tbody>
                 {
-                  userss ? userss?.filter(a=>a?.role === 'Worker')?.map((user)=><ManageUsersTable 
+                  userss?.map((user)=><ManageUsersTable 
                   key={user._id}
                   user={user}
                   refetch={refetch}
-                   />) : <div>
-                    <h1 className="text-2xl font-bold">Please Reload the Page Again</h1>
-                   </div>
+                   />)
                 }
               </tbody>
             </table>

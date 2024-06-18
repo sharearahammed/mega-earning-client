@@ -1,14 +1,15 @@
 /* eslint-disable react/prop-types */
 import { AiOutlineBars } from "react-icons/ai";
-import { GrLogout, GrTask } from "react-icons/gr";
-import { MdHomeWork, MdManageAccounts, MdOutlinePostAdd } from "react-icons/md";
+// import { GrLogout, GrTask } from "react-icons/gr";
+// import { MdHomeWork, MdManageAccounts, MdOutlinePostAdd } from "react-icons/md";
 import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import useAuth from "../../Hook/useAuth";
 import { IoNotifications } from "react-icons/io5";
-import { FaClipboardList, FaCoins, FaThList } from "react-icons/fa";
-import { PiCoins, PiHandWithdrawBold } from "react-icons/pi";
-import { HiOutlineCurrencyDollar } from "react-icons/hi";
+import { FaCoins } from "react-icons/fa";
+// import { FaClipboardList, FaCoins, FaThList } from "react-icons/fa";
+// import { PiCoins, PiHandWithdrawBold } from "react-icons/pi";
+// import { HiOutlineCurrencyDollar } from "react-icons/hi";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
 import NotificationModal from "./NotificationModal";
@@ -41,12 +42,14 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
               <div className="flex  flex-col">
                 <div className="flex  items-center gap-4 lg:gap-6">
                   <div className="text-[10px] lg:text-[20px] flex items-center gap-2">
-                    <div><FaCoins /></div>
+                    <div>
+                    <img className="h-9 w-9" src="https://i.ibb.co/K0w0SRf/coin-icon-coin-thin-line-icon-101027460-removebg-preview.png" alt="" />
+                    </div>
                     <div>{loginUser.coins}</div>
                   </div>
                   <div className="rounded-full">
                   <img
-                    className="lg:h-10 lg:w-10 h-7 w-7 border border-gray-400 rounded-full "
+                    className="lg:h-14 lg:w-14 h-7 w-7 border border-gray-400 rounded-full "
                     src={loginUser.image}
                     alt=""
                   />
@@ -122,7 +125,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <MdHomeWork className="w-5 h-5" />
+                    {/* <MdHomeWork className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/cY7rt52/76d26e52172a185614e9ce4d32e00d88.png" alt="" />
 
                     <span className="mx-4 font-medium">Home</span>
                   </NavLink>
@@ -137,7 +141,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <MdManageAccounts className="w-5 h-5" />
+                    {/* <MdManageAccounts className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/VJfXLBT/user-management-57.png" alt="" />
 
                     <span className="mx-4 font-medium">Manage Users</span>
                   </NavLink>
@@ -152,7 +157,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <GrTask className="w-5 h-5" />
+                    {/* <GrTask className="w-5 h-5" /> */}
+                    <img className="w-7 h-8" src="https://i.ibb.co/0XprJr2/images-1-removebg-preview.png" alt="" />
 
                     <span className="mx-4 font-medium">Manage Task</span>
                   </NavLink>
@@ -174,7 +180,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <MdHomeWork className="w-5 h-5" />
+                    {/* <MdHomeWork className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/cY7rt52/76d26e52172a185614e9ce4d32e00d88.png" alt="" />
 
                     <span className="mx-4 font-medium">Home</span>
                   </NavLink>
@@ -189,7 +196,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <FaThList className="w-5 h-5" />
+                    {/* <FaThList className="w-5 h-5" /> */}
+                    <img className="w-8 h-8" src="https://i.ibb.co/zNsxP98/pngtree-task-list-line-icon-png-image-9133765.png" alt="" />
 
                     <span className="mx-4 font-medium">TaskList</span>
                   </NavLink>
@@ -204,7 +212,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <FaClipboardList className="w-5 h-5" />
+                    {/* <FaClipboardList className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/cTpw7rm/4301554.png" alt="" />
 
                     <span className="mx-4 font-medium">My Submission</span>
                   </NavLink>
@@ -219,7 +228,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <PiHandWithdrawBold className="w-5 h-5" />
+                    {/* <PiHandWithdrawBold className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/nC9JB3Z/free-withdrawal-1795307-1522572.png" alt="" />
 
                     <span className="mx-4 font-medium">Withdrawals</span>
                   </NavLink>
@@ -241,7 +251,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <MdHomeWork className="w-5 h-5" />
+                    {/* <MdHomeWork className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/cY7rt52/76d26e52172a185614e9ce4d32e00d88.png" alt="" />
 
                     <span className="mx-4 font-medium">Home</span>
                   </NavLink>
@@ -256,7 +267,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <MdOutlinePostAdd className="w-5 h-5" />
+                    {/* <MdOutlinePostAdd className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/DbLk0Tj/clipboard-task-add-regular-icon-202968.png" alt="" />
 
                     <span className="mx-4 font-medium">Add newTasks</span>
                   </NavLink>
@@ -264,14 +276,15 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                     to="my-listings"
                     end
                     className={({ isActive }) =>
-                      `flex items-center px-4 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
+                      `flex items-center px-3 py-2 my-5  transition-colors duration-300 transform  hover:bg-gray-200 rounded-lg   hover:text-gray-700 ${
                         isActive
                           ? "bg-gray-200 rounded-lg  text-gray-700"
                           : "text-black"
                       }`
                     }
                   >
-                    <FaClipboardList className="w-5 h-5" />
+                    {/* <FaClipboardList className="w-5 h-5" /> */}
+                    <img className="w-9 h-7" src="https://i.ibb.co/sHhhwSr/png-clipart-computer-icons-task-management-action-item-compliance-icon-angle-text-removebg-preview.png" alt="" />
 
                     <span className="mx-4 font-medium">MyTask’s</span>
                   </NavLink>
@@ -286,7 +299,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <PiCoins className="w-5 h-5" />
+                    {/* <PiCoins className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/K0w0SRf/coin-icon-coin-thin-line-icon-101027460-removebg-preview.png" alt="" />
 
                     <span className="mx-4 font-medium">Purchase Coin</span>
                   </NavLink>
@@ -301,7 +315,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
                       }`
                     }
                   >
-                    <HiOutlineCurrencyDollar className="w-5 h-5" />
+                    {/* <HiOutlineCurrencyDollar className="w-5 h-5" /> */}
+                    <img className="w-7 h-7" src="https://i.ibb.co/2KL6XNk/4827568.png" alt="" />
 
                     <span className="mx-4 font-medium">Payment history</span>
                   </NavLink>
@@ -321,7 +336,8 @@ const SideNavbar = ({ isActive,setActive, loginUser }) => {
               onClick={logOut}
               className="flex w-full items-center px-4 py-2 mt-5 text-black hover:bg-gray-200 rounded-lg   hover:text-gray-700 transition-colors duration-300 transform"
             >
-              <GrLogout className="w-5 h-5" />
+              {/* <GrLogout className="w-5 h-5" /> */}
+              <img className="w-7 h-7" src="https://i.ibb.co/w6RTKgQ/logout-removebg-preview.png" alt="" />
 
               <span className="mx-4 font-medium">Logout</span>
             </button>

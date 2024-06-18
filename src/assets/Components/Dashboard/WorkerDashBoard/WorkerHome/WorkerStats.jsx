@@ -18,7 +18,8 @@ const WorkerStats = ({ userCoin, submissions, totalPayableAmount }) => {
                   Available Coin
                 </dt>
                 <dd className="relative  mt-1 text-3xl leading-9 font-semibold text-[#22AB59] dark:text-indigo-400 flex items-center gap-3">
-                <p className="absolute p-3 shadow-black shadow-sm text-white bg-blue-500 rounded-lg -top-[75px] -right-[35px] "><FaCoins /></p>
+                <p className="absolute p-3 shadow-black shadow-sm text-white bg-blue-500 rounded-lg -top-[75px] -right-[35px] "><FaCoins />
+                </p>
                 {userCoin?.coins}
                 </dd>
               </dl>

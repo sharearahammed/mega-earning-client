@@ -53,7 +53,7 @@ const MyListings = () => {
         <title>Dashboard | My Listings</title>
       </Helmet>
 
-      <div className="container mx-auto px-4 sm:px-8"   style={{
+      <div className="container lg:pt-10 mx-auto px-4 sm:px-8"   style={{
     backgroundImage:
       'url("https://i.ibb.co/Fm7Bs6W/2148015628.jpg")',
   }}>

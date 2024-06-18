@@ -4,19 +4,19 @@ import useAuth from "../../Hook/useAuth";
 import { FaCoins } from "react-icons/fa6";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hook/useAxiosSecure";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 
-const Navbar = ({isOpen,setIsOpen}) => {
+const Navbar = ({ isOpen, setIsOpen }) => {
   const { user, logOut } = useAuth();
   const axiosSecure = useAxiosSecure();
-    const {
-        data: coin = [""]
-      } = useQuery({
-        queryKey: ['coin'],
-        queryFn: async () => {
-          const res = await axiosSecure.get(`/coins/${user.email}`)
-          return res.data
-        },
-      })
+  const { data: coin = [""] } = useQuery({
+    queryKey: ["coin"],
+    queryFn: async () => {
+      const res = await axiosSecure.get(`/coins/${user.email}`);
+      return res.data;
+    },
+  });
 
   const links = (
     <>
@@ -73,9 +73,9 @@ const Navbar = ({isOpen,setIsOpen}) => {
                   ? "pending"
                   : ""
               }
-              
             >
-              <FaCoins />{coin.coins}
+              <FaCoins />
+              {coin.coins}
             </NavLink>
           </li>
         </>
@@ -88,10 +88,19 @@ const Navbar = ({isOpen,setIsOpen}) => {
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center justify-between">
             <Link to={"/"} className="">
-            <div className="chover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex justify-center items-center gap-1 lg:text-2xl font-extrabold">
-              <img className="h-9 lg:h-14" src="https://i.ibb.co/hCm3GC9/4136942-removebg-preview.png" alt="" />
-              <h1>Mega<span className="bg-gradient-to-r from-[#099340] to-[#2ad471] bg-clip-text text-transparent">Earning</span></h1>
-            </div>
+              <div className="chover:bg-gray-100 hover:border hover:rounded-lg px-3 py-1 flex justify-center items-center gap-1 lg:text-2xl font-extrabold">
+                <img
+                  className="h-9 lg:h-14"
+                  src="https://i.ibb.co/hCm3GC9/4136942-removebg-preview.png"
+                  alt=""
+                />
+                <h1>
+                  Mega
+                  <span className="bg-gradient-to-r from-[#099340] to-[#2ad471] bg-clip-text text-transparent">
+                    Earning
+                  </span>
+                </h1>
+              </div>
             </Link>
 
             {/* Mobile menu button */}
@@ -151,48 +160,74 @@ const Navbar = ({isOpen,setIsOpen}) => {
 
             {user ? (
               <>
-              <div className="lg dropdown dropdown-end">
-                <div
-                  tabIndex={0}
-                  role="button"
-                  className="btn btn-ghost btn-circle avatar"
-                >
-                  <div data-tip={user?.displayName} className="text-black tooltip tooltip-open tooltip-left w-14 border-2 border-[#2DE677] rounded-full">
-                    <img data-tip={user?.displayName}
-                    className="tooltip tooltip-open tooltip-left w-14 h-16"
-                      alt="Tailwind CSS Navbar component"
-                      src={user?.photoURL}
-                    />
-                  </div>
-                </div>
-                <ul
-                  tabIndex={-1}
-                  className="lg:block hidden  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-                >
-                  <li>
-                    <Link to={"/userProfile"} className="justify-between">
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <a><FaCoins />{coin.coins}
-                    </a>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => logOut()}
-                      className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl"
+                <div className="lg dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="btn btn-ghost btn-circle avatar"
+                  >
+                    <div
+                      className="text-black w-14 border-2 border-[#2DE677] rounded-full"
                     >
-                      Logout
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div>
-              <button onClick={() => logOut()} className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl lg:hidden">
+                      <div
+                        href=""
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={user?.displayName}
+                        data-tooltip-place="top"
+                      >
+                        <img
+                          data-tip={user?.displayName}
+                          className="tooltip tooltip-open tooltip-left w-14 h-16"
+                          alt="Tailwind CSS Navbar component"
+                          src={user?.photoURL}
+                        />
+                      </div>
+                      <Tooltip  id="my-tooltip" />
+                    </div>
+                  </div>
+                  <ul
+                    tabIndex={-1}
+                    className="lg:block hidden  menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+                  >
+                    <li>
+                      <Link to={"/userProfile"} className="justify-between">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <a>
+                        <FaCoins />
+                        {coin.coins}
+                      </a>
+                    </li>
+                    <li>
+                      <button
+                        onClick={() => logOut()}
+                        className="bg-[#22AB59] text-white px-7 py-2 rounded-3xl"
+                      >
+                        <img
+                          className="w-7 h-7"
+                          src="https://i.ibb.co/w6RTKgQ/logout-removebg-preview.png"
+                          alt=""
+                        />
+                        Logout
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <button
+                    onClick={() => logOut()}
+                    className="flex gap-2 bg-[#22AB59] text-white px-7 py-2 rounded-3xl lg:hidden"
+                  >
+                    <img
+                      className="w-7 h-7"
+                      src="https://i.ibb.co/w6RTKgQ/logout-removebg-preview.png"
+                      alt=""
+                    />
                     Logout
                   </button>
-              </div>
+                </div>
               </>
             ) : (
               <div className="flex gap-2 items-center mt-4 lg:mt-0">

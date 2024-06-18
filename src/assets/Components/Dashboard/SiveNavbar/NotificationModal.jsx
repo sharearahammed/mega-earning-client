@@ -42,7 +42,7 @@ const NotificationModal = ({ closeModal, isOpen, notifications }) => {
                 >
                   Task Details
                 </DialogTitle>
-                  {notifications?.map((notification, index) => (
+                  {notifications.length > 0 ? notifications?.map((notification, index) => (
                     <div key={index} className="notification-item">
                         <h1 className="font-bold text-xl">Message {index+1} :</h1>
                       <p>{notification.message}</p>
@@ -51,7 +51,19 @@ const NotificationModal = ({ closeModal, isOpen, notifications }) => {
                       </small>
                       <br />
                     </div>
-                  ))}
+                  )) : 
+                  (
+                    <div className="flex flex-col items-center ">
+                      <div>
+                        <img className="h-36 w-[200px]" src="https://i.ibb.co/QXsBC02/image-processing20200621-21652-unscreen.gif" alt="" />
+                      </div>
+                      <div>
+                        <p>
+                          No message notification!
+                        </p>
+                      </div>
+                    </div>
+                  )}
 
                 <div className="mt-3">
                   <button

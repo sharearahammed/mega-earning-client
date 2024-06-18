@@ -58,8 +58,8 @@ const ManageUsersTable = ({user,refetch}) => {
           <td>{user?.role}</td>
           <td>{user?.coins}</td>
           <td>
-          <div>
-      <select value={selectedRole} onChange={handleRoleChange} className="dropdown bg-gray-100 px-3 py-2  text-center rounded-lg">
+          <div className="">
+      <select value={selectedRole} onChange={handleRoleChange} className="dropdown border border-gray-600 bg-gray-100 px-3 py-2  text-center rounded-lg">
         <option value="TaskCreator">Task Creator</option>
         <option value="Admin">Admin</option>
         <option value="Worker">Worker</option>
